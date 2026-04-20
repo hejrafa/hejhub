@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hejhub",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["-S", "localhost:8765", "-t", "/Users/hejrafa/Documents/Websites/hejhub.com", "/Users/hejrafa/Documents/Websites/hejhub.com/kirby/router.php"],
+      "port": 8765
+    }
+  ]
+}

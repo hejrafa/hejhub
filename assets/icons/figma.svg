@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 32 48" width="100%">
+<g id="Vector">
+<path d="M0 40C0 35.5818 3.58176 32 8 32H16V40C16 44.4182 12.4182 48 8 48C3.58176 48 0 44.4182 0 40Z" fill="#24CB71"/>
+<path d="M16 0V16H24C28.4182 16 32 12.4182 32 8C32 3.58176 28.4182 0 24 0H16Z" fill="#FF7237"/>
+<path d="M24 32C28.4183 32 32 28.4183 32 24C32 19.5817 28.4183 16 24 16C19.5817 16 16 19.5817 16 24C16 28.4183 19.5817 32 24 32Z" fill="#00B6FF"/>
+<path d="M0 8C0 12.4182 3.58176 16 8 16H16V0H8C3.58176 0 0 3.58176 0 8Z" fill="#FF3737"/>
+<path d="M0 24C0 28.4182 3.58176 32 8 32H16V16H8C3.58176 16 0 19.5818 0 24Z" fill="var(--fill-0, #874FFF)"/>
+</g>
+</svg>

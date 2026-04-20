@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 48 48" width="100%">
+<g clip-path="url(#clip0_0_971)" id="letterboxd-decal-dots-neg-rgb 1">
+<g id="letterboxd-decal-dots-neg-rgb">
+<path d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="var(--fill-0, white)" id="Circle"/>
+<g id="dots-pos">
+<g id="Dots">
+<path d="M24 30.7149C27.7155 30.7149 30.7275 27.7074 30.7275 23.9974C30.7275 20.2875 27.7155 17.28 24 17.28C20.2845 17.28 17.2724 20.2875 17.2724 23.9974C17.2724 27.7074 20.2845 30.7149 24 30.7149Z" fill="var(--fill-0, #00E054)" id="Green"/>
+<g id="Blue">
+<g id="Mask group">
+<mask height="14" id="mask0_0_971" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="14" x="29" y="17">
+<g id="Group">
+<path d="M42.144 17.28H29.6787V30.8534H42.144V17.28Z" fill="var(--fill-0, white)" id="Vector"/>
+</g>
+</mask>
+<g mask="url(#mask0_0_971)">
+<path d="M35.4165 30.7149C39.132 30.7149 42.144 27.7074 42.144 23.9974C42.144 20.2875 39.132 17.28 35.4165 17.28C31.7009 17.28 28.6889 20.2875 28.6889 23.9974C28.6889 27.7074 31.7009 30.7149 35.4165 30.7149Z" fill="var(--fill-0, #40BCF4)" id="Vector_2"/>
+</g>
+</g>
+</g>
+<g id="Orange">
+<g id="Mask group_2">
+<mask height="14" id="mask1_0_971" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="14" x="5" y="17">
+<g id="Group_2">
+<path d="M18.3213 17.28H5.856V30.8534H18.3213V17.28Z" fill="var(--fill-0, white)" id="Vector_3"/>
+</g>
+</mask>
+<g mask="url(#mask1_0_971)">
+<path d="M12.5836 30.7149C16.2991 30.7149 19.3111 27.7074 19.3111 23.9974C19.3111 20.2875 16.2991 17.28 12.5836 17.28C8.86803 17.28 5.856 20.2875 5.856 23.9974C5.856 27.7074 8.86803 30.7149 12.5836 30.7149Z" fill="var(--fill-0, #FF8000)" id="Vector_4"/>
+</g>
+</g>
+</g>
+<path clip-rule="evenodd" d="M18.2918 27.5541C17.6458 26.5227 17.2724 25.3036 17.2724 23.9974C17.2724 22.6913 17.6458 21.4722 18.2918 20.4407C18.9377 21.4722 19.3111 22.6913 19.3111 23.9974C19.3111 25.3036 18.9377 26.5227 18.2918 27.5541Z" fill="var(--fill-0, #556677)" fill-rule="evenodd" id="Overlap"/>
+<path clip-rule="evenodd" d="M29.7082 20.4407C30.3542 21.4722 30.7276 22.6913 30.7276 23.9974C30.7276 25.3036 30.3542 26.5227 29.7082 27.5541C29.0623 26.5227 28.6889 25.3036 28.6889 23.9974C28.6889 22.6913 29.0623 21.4722 29.7082 20.4407Z" fill="var(--fill-0, #556677)" fill-rule="evenodd" id="Overlap_2"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_971">
+<rect fill="white" height="48" width="48"/>
+</clipPath>
+</defs>
+</svg>
