@@ -4,7 +4,7 @@
     {
       "name": "hejhub",
       "runtimeExecutable": "php",
-      "runtimeArgs": ["-S", "localhost:8765", "-t", "/Users/hejrafa/Documents/Websites/hejhub.com", "/Users/hejrafa/Documents/Websites/hejhub.com/kirby/router.php"],
+      "runtimeArgs": ["-S", "localhost:8765", "-t", "/Users/hejrafa/Documents/Websites/hejhub.com"],
       "port": 8765
     }
   ]
