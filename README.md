@@ -47,10 +47,10 @@ assets/images/          Image assets
 Some tiles enhance themselves with public data when available:
 
 - Letterboxd: pulls recent watched posters from `https://letterboxd.com/hejrafa/rss/` through AllOrigins.
-- YouTube consume: rotates a small set of thumbnail images and links to subscriptions.
+- YouTube consume: rotates through a curated set of favorite creator channel images and links to the active creator.
 - YouTube create: pulls public subscriber count for channel `UCzhKeHDJiADSCY8uoZEub3Q`.
 - Apple Music: pulls album artwork from Apple Marketing Tools RSS, with local fallbacks.
-- Books: pulls trending cover art from Open Library and links to Hafenfuchs.
+- Books: pulls covers from Rafael's Rory reading shelf on Literal, with a local Rory shelf fallback for offline/file previews.
 - GitHub: pulls recent contribution levels and renders the last 35 days as dots.
 
 If an API fails, the page keeps its fallback content.

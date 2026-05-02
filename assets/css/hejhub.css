@@ -32,9 +32,9 @@
   --cream: #fff8ea;
   --ambient: rgba(47, 35, 20, 0.18);
   --contact: rgba(45, 5, 4, 0.22);
-  --create-ink: #2b6327;
-  --create-frame: #2b6327;
-  --create-paper: #eaf1dc;
+  --create-ink: #101010;
+  --create-frame: #101010;
+  --create-paper: #f2eee6;
   --shine: rgba(255, 255, 255, 0.38);
   --lift-shadow: rgba(45, 5, 4, 0.28);
   --shadow: 0 28px 70px var(--ambient);
@@ -76,9 +76,9 @@ body {
 
 body[data-mode="create"] {
   background:
-    radial-gradient(circle at 14% 12%, rgba(159, 203, 216, 0.34), transparent 23rem),
-    radial-gradient(circle at 84% 78%, rgba(203, 184, 233, 0.3), transparent 26rem),
-    linear-gradient(135deg, #e8f0f4 0%, #fbefd9 46%, #e8def0 100%);
+    radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.38), transparent 21rem),
+    radial-gradient(circle at 84% 78%, rgba(201, 169, 91, 0.2), transparent 25rem),
+    linear-gradient(135deg, #e8e2d6 0%, #fbf6eb 46%, #ddd4c5 100%);
 }
 
 body::before {
@@ -107,8 +107,8 @@ body::after {
 
 body[data-mode="create"]::after {
   background:
-    radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.34), transparent 16rem),
-    radial-gradient(circle at 72% 78%, rgba(94, 79, 158, 0.13), transparent 28rem);
+    radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.36), transparent 16rem),
+    radial-gradient(circle at 72% 78%, rgba(16, 16, 16, 0.12), transparent 28rem);
 }
 
 a,
@@ -216,8 +216,8 @@ img {
 body[data-mode="create"] .mode-switch {
   background: var(--create-frame);
   box-shadow:
-    0 7px 0 rgba(24, 65, 22, 0.22),
-    0 18px 26px rgba(35, 75, 28, 0.14);
+    0 7px 0 rgba(16, 16, 16, 0.22),
+    0 18px 26px rgba(20, 19, 19, 0.14);
 }
 
 .mode-switch::before {
@@ -386,8 +386,8 @@ body[data-mode="create"] .bento {
   border-color: var(--create-frame);
   background: var(--create-frame);
   box-shadow:
-    0 12px 0 rgba(24, 65, 22, 0.2),
-    0 32px 62px rgba(35, 75, 28, 0.16);
+    0 12px 0 rgba(16, 16, 16, 0.2),
+    0 32px 62px rgba(20, 19, 19, 0.18);
 }
 
 .tile {
@@ -752,11 +752,45 @@ body[data-mode="create"] .bento {
 }
 
 .create-bento .tile {
-  border-color: rgba(36, 90, 34, 0.9);
+  border-color: rgba(255, 248, 234, 0.16);
+  background:
+    radial-gradient(circle at var(--mx, 18%) var(--my, 12%), rgba(255, 255, 255, 0.16), transparent 12rem),
+    linear-gradient(145deg, var(--tile-bg), var(--tile-bg-2, #1d1d1d));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 234, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.28),
+    0 8px 0 rgba(0, 0, 0, 0.2),
+    0 22px 34px rgba(16, 16, 16, 0.16);
+}
+
+.create-bento .tile::before {
+  opacity: 0.2;
+  background:
+    radial-gradient(circle at var(--mx, 24%) var(--my, 12%), rgba(255, 255, 255, 0.2), transparent 12rem),
+    linear-gradient(115deg, transparent 48%, rgba(255, 248, 234, 0.08) 48.4%, transparent 49%);
+}
+
+.create-bento .tile:hover {
+  filter: saturate(1.04) contrast(1.03);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 234, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.34),
+    0 14px 0 rgba(0, 0, 0, 0.24),
+    0 30px 42px rgba(16, 16, 16, 0.2);
+}
+
+.create-bento .tile-kicker {
+  color: rgba(255, 248, 234, 0.66);
+}
+
+.create-bento .tile-title,
+.create-bento .create-count {
+  color: #fff8ea;
 }
 
 .tile-create-youtube {
-  --tile-bg: #d85562;
+  --tile-bg: #171717;
+  --tile-bg-2: #050505;
   --tilt: -0.8deg;
   --icon-tilt: 4deg;
   grid-column: 1 / span 5;
@@ -765,7 +799,8 @@ body[data-mode="create"] .bento {
 }
 
 .tile-chatgpt {
-  --tile-bg: #6e74c8;
+  --tile-bg: #232323;
+  --tile-bg-2: #101010;
   --tilt: 0.8deg;
   --icon-tilt: -6deg;
   grid-column: 6 / span 5;
@@ -774,34 +809,38 @@ body[data-mode="create"] .bento {
 }
 
 .tile-umami {
-  --tile-bg: #f0cc79;
+  --tile-bg: #2c2720;
+  --tile-bg-2: #12100d;
   --tilt: -0.4deg;
   --icon-tilt: 3deg;
   grid-column: 6 / span 5;
   grid-row: 2;
-  color: #2b2410;
+  color: var(--cream);
 }
 
 .tile-figma {
-  --tile-bg: #8fc8dc;
+  --tile-bg: #272727;
+  --tile-bg-2: #111111;
   --tilt: -1deg;
   --icon-tilt: 8deg;
   grid-column: 11 / span 5;
   grid-row: 1;
-  color: #102c49;
+  color: var(--cream);
 }
 
 .tile-epidemic {
-  --tile-bg: #c5abe8;
+  --tile-bg: #211f25;
+  --tile-bg-2: #0f0e12;
   --tilt: 1deg;
   --icon-tilt: -3deg;
   grid-column: 6 / span 5;
   grid-row: 3;
-  color: #221a4d;
+  color: var(--cream);
 }
 
 .tile-github {
-  --tile-bg: #243458;
+  --tile-bg: #181818;
+  --tile-bg-2: #060606;
   --tilt: 0.4deg;
   --icon-tilt: -4deg;
   grid-column: 11 / span 5;
@@ -898,8 +937,10 @@ body[data-mode="create"] .bento {
 .github-dot {
   aspect-ratio: 1;
   border-radius: 999px;
-  background: rgba(255, 248, 234, 0.22);
-  box-shadow: inset 0 -1px 0 rgba(255, 248, 234, 0.12);
+  background: rgba(255, 248, 234, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 234, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .github-dot.is-l1 { background: #9be15d; }

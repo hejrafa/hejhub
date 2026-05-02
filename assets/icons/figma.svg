@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 32 48" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="xMidYMid meet" style="display: block;" viewBox="0 0 32 48" width="100%">
 <g id="Vector">
 <path d="M0 40C0 35.5818 3.58176 32 8 32H16V40C16 44.4182 12.4182 48 8 48C3.58176 48 0 44.4182 0 40Z" fill="#24CB71"/>
 <path d="M16 0V16H24C28.4182 16 32 12.4182 32 8C32 3.58176 28.4182 0 24 0H16Z" fill="#FF7237"/>

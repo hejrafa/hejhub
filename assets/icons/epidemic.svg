@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 28.2533 34.2857" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="xMidYMid meet" style="display: block;" viewBox="0 0 28.2533 34.2857" width="100%">
 <g id="epidemic">
 <path d="M5.8935 5.88801C11.9392 -0.152525 20.8745 -1.54481 28.2533 1.70889V11.9809C23.7627 7.49428 16.482 7.49428 11.9916 11.9809C7.50125 16.4675 7.50116 23.7418 11.9913 28.2285L18.0535 34.2857L5.85787 34.2852C-1.96437 26.4307 -1.95272 13.7278 5.8935 5.88801Z" fill="var(--fill-0, white)"/>
 <path d="M28.2533 26.0232H14.1991L28.2533 11.9809L28.2533 26.0232Z" fill="var(--fill-0, white)"/>
