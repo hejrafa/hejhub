@@ -236,27 +236,19 @@ async function loadLetterboxd() {
   const container = document.getElementById('letterboxd-films');
   if (!container) return;
   try {
-    const rss = 'https://letterboxd.com/hejrafa/rss/';
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rss)}`;
+    const rss = `https://letterboxd.com/hejrafa/rss/?t=${Date.now()}`;
+    const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
     const res = await fetch(proxyUrl);
-    const json = await res.json();
-    let xmlText = json.contents;
-    if (xmlText && xmlText.startsWith('data:')) {
-      const b64 = xmlText.split(',')[1];
-      xmlText = atob(b64);
-    }
-
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlText, 'text/xml');
-    const items = Array.from(doc.querySelectorAll('item')).slice(0, 4);
+    const data = await res.json();
+    const items = (data?.items || []).slice(0, 4);
     if (!items.length) return;
 
     const posterClasses = ['poster-a', 'poster-b', 'poster-c', 'poster-d'];
     container.innerHTML = '';
     items.forEach((item, index) => {
-      const desc = item.querySelector('description')?.textContent || '';
+      const desc = item.description || item.content || '';
       const imgMatch = desc.match(/src="([^"]+)"/);
-      const title = item.querySelector('title')?.textContent || '';
+      const title = item.title || '';
 
       const poster = document.createElement('span');
       poster.className = `poster ${posterClasses[index] || ''}`;
