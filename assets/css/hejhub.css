@@ -314,12 +314,12 @@ body[data-mode="create"] .mode-button.is-active {
 }
 
 .hero h1 {
-  min-height: clamp(126px, 13vw, 184px);
+  min-height: clamp(112px, 11vw, 158px);
   margin: 0;
   margin-inline: auto;
   max-width: 920px;
   font-family: var(--display);
-  font-size: clamp(88px, 9.6vw, 158px);
+  font-size: clamp(76px, 8.4vw, 136px);
   font-weight: 700;
   line-height: 0.84;
   letter-spacing: 0;
@@ -1286,8 +1286,8 @@ body[data-mode="create"] .bento {
   }
 
   .hero h1 {
-    min-height: 128px;
-    font-size: clamp(68px, 16vw, 104px);
+    min-height: 112px;
+    font-size: clamp(56px, 13.5vw, 88px);
   }
 
   .error-panel {
