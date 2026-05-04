@@ -1014,6 +1014,10 @@ body[data-mode="create"] .bento {
     padding: 16px;
   }
 
+  .tile-title {
+    display: none;
+  }
+
   .tile-letterboxd,
   .tile-youtube,
   .tile-reddit {
@@ -1165,6 +1169,13 @@ body[data-mode="create"] .bento {
 
   .site-footer {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .email-link {
+    justify-content: center;
   }
 }
 
