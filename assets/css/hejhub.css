@@ -818,9 +818,9 @@ body[data-mode="create"] .bento {
   color: var(--cream);
 }
 
-.tile-figma {
-  --tile-bg: #272727;
-  --tile-bg-2: #111111;
+.tile-curseforge {
+  --tile-bg: #2d211b;
+  --tile-bg-2: #110c09;
   --tilt: -1deg;
   --icon-tilt: 8deg;
   grid-column: 11 / span 5;
@@ -876,14 +876,14 @@ body[data-mode="create"] .bento {
 
 .tile-chatgpt .tile-title,
 .tile-umami .tile-title,
-.tile-figma .tile-title,
+.tile-curseforge .tile-title,
 .tile-epidemic .tile-title {
   font-size: var(--tile-title-side);
 }
 
 .tile-chatgpt .tile-icon,
 .tile-umami .tile-icon,
-.tile-figma .tile-icon,
+.tile-curseforge .tile-icon,
 .tile-epidemic .tile-icon {
   width: 82px;
   height: 82px;
@@ -1383,7 +1383,7 @@ body[data-mode="create"] .bento {
   .tile-books,
   .tile-chatgpt,
   .tile-umami,
-  .tile-figma,
+  .tile-curseforge,
   .tile-epidemic {
     grid-column: span 1;
     grid-row: auto;
@@ -1417,7 +1417,7 @@ body[data-mode="create"] .bento {
     order: 3;
   }
 
-  .tile-figma {
+  .tile-curseforge {
     order: 4;
   }
 
