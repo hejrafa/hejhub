@@ -16,11 +16,7 @@ const lines = [
 ];
 
 function rotateHeadline() {
-  const el = document.getElementById('dynamic-line');
-  if (!el) return;
-
-  const index = Math.floor(Math.random() * lines.length);
-  el.innerHTML = lines[index];
+  HejHub.pickLine('dynamic-line', lines, { storageKey: 'hejhub:lastHeadline' });
 }
 
 function setupModeSwitch() {
@@ -59,48 +55,29 @@ function setupModeSwitch() {
   });
 }
 
-function setupPhysicality() {
-  const objects = Array.from(document.querySelectorAll('.tile'));
-  objects.forEach(object => {
-    object.addEventListener('pointermove', event => {
-      const rect = object.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-      const px = (x - 0.5) * 2;
-      const py = (y - 0.5) * 2;
-
-      object.style.setProperty('--mx', `${Math.round(x * 100)}%`);
-      object.style.setProperty('--my', `${Math.round(y * 100)}%`);
-      object.style.setProperty('--rx', `${(-py * 2.4).toFixed(2)}deg`);
-      object.style.setProperty('--ry', `${(px * 3.2).toFixed(2)}deg`);
-    });
-
-    object.addEventListener('pointerleave', () => {
-      object.style.removeProperty('--mx');
-      object.style.removeProperty('--my');
-      object.style.removeProperty('--rx');
-      object.style.removeProperty('--ry');
-    });
-  });
-}
-
 function renderGitHubDots(contributions) {
   const grid = document.getElementById('github-dots');
   if (!grid) return;
 
-  grid.innerHTML = '';
+  const fragment = document.createDocumentFragment();
   contributions.forEach(item => {
     const level = Math.max(0, Math.min(4, Number(item.level) || 0));
     const dot = document.createElement('span');
     dot.className = `github-dot${level ? ` is-l${level}` : ''}`;
-    grid.appendChild(dot);
+    fragment.appendChild(dot);
   });
+  grid.replaceChildren(fragment);
 }
 
 async function loadGitHubDots() {
   try {
-    const res = await fetch('https://github-contributions-api.jogruber.de/v4/hejrafa?y=last');
-    const data = await res.json();
+    const data = await HejHub.fetchJsonCached(
+      'https://github-contributions-api.jogruber.de/v4/hejrafa?y=last',
+      {
+        cacheKey: 'github-contributions-hejrafa-last-year',
+        ttl: 30 * 60 * 1000
+      }
+    );
     const contributions = (data?.contributions || []).slice(-35);
     if (contributions.length) {
       renderGitHubDots(contributions);
@@ -156,7 +133,7 @@ function rotateYouTubeThumb() {
     }
   ];
 
-  const creator = pickDifferent(creators, 'hejhub:lastYouTubeCreator');
+  const creator = HejHub.pickDifferent(creators, 'hejhub:lastYouTubeCreator');
   if (!creator) return;
 
   tile.href = creator.url;
@@ -170,25 +147,17 @@ async function loadYouTubeSubscriberCount() {
   if (!count) return;
 
   try {
-    const res = await fetch('https://api.socialcounts.org/youtube-live-subscriber-count/UCzhKeHDJiADSCY8uoZEub3Q');
-    const data = await res.json();
+    const data = await HejHub.fetchJsonCached(
+      'https://api.socialcounts.org/youtube-live-subscriber-count/UCzhKeHDJiADSCY8uoZEub3Q',
+      {
+        cacheKey: 'youtube-subscriber-count-UCzhKeHDJiADSCY8uoZEub3Q',
+        ttl: 10 * 60 * 1000
+      }
+    );
     const value = data?.counters?.api?.subscriberCount || data?.counters?.estimation?.subscriberCount;
     if (!value) return;
     count.textContent = new Intl.NumberFormat('en', { notation: value > 9999 ? 'compact' : 'standard' }).format(value);
   } catch {}
-}
-
-function pickDifferent(items, storageKey) {
-  if (!items.length) return null;
-  if (items.length === 1) return items[0];
-
-  const last = Number(localStorage.getItem(storageKey));
-  let index = Math.floor(Math.random() * items.length);
-  if (index === last) {
-    index = (index + 1 + Math.floor(Math.random() * (items.length - 1))) % items.length;
-  }
-  localStorage.setItem(storageKey, String(index));
-  return items[index];
 }
 
 function rotateFallbackAlbum() {
@@ -219,7 +188,7 @@ function rotateFallbackAlbum() {
     }
   ];
 
-  const album = pickDifferent(albums, 'hejhub:lastFallbackAlbum');
+  const album = HejHub.pickDifferent(albums, 'hejhub:lastFallbackAlbum');
   if (!album) return;
   tile.href = album.url;
   tile.setAttribute('aria-label', `Apple Music album: ${album.name}`);
@@ -236,45 +205,53 @@ async function loadLetterboxd() {
   const container = document.getElementById('letterboxd-films');
   if (!container) return;
   try {
-    const rss = `https://letterboxd.com/hejrafa/rss/?t=${Date.now()}`;
+    const rss = 'https://letterboxd.com/hejrafa/rss/';
     const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
-    const res = await fetch(proxyUrl);
-    const data = await res.json();
+    const data = await HejHub.fetchJsonCached(proxyUrl, {
+      cacheKey: 'letterboxd-rss-hejrafa',
+      ttl: 30 * 60 * 1000
+    });
     const items = (data?.items || []).slice(0, 4);
     if (!items.length) return;
 
     const posterClasses = ['poster-a', 'poster-b', 'poster-c', 'poster-d'];
-    container.innerHTML = '';
+    const fragment = document.createDocumentFragment();
     items.forEach((item, index) => {
       const desc = item.description || item.content || '';
-      const imgMatch = desc.match(/src="([^"]+)"/);
+      const doc = new DOMParser().parseFromString(desc, 'text/html');
+      const posterImage = doc.querySelector('img');
       const title = item.title || '';
 
       const poster = document.createElement('span');
       poster.className = `poster ${posterClasses[index] || ''}`;
-      if (imgMatch) {
+      if (posterImage?.src) {
         const img = document.createElement('img');
-        img.src = imgMatch[1];
+        img.src = posterImage.src;
         img.alt = title;
         img.loading = 'lazy';
         poster.appendChild(img);
       }
-      container.appendChild(poster);
+      fragment.appendChild(poster);
     });
+    container.replaceChildren(fragment);
   } catch {}
 }
 
 async function loadAppleAlbum() {
   const tile = document.querySelector('.tile-music');
   const cover = document.getElementById('album-cover');
-  const title = document.getElementById('album-title');
-  if (!tile || !cover || !title) return;
+  if (!tile || !cover) return;
 
   try {
-    const res = await fetch(`https://rss.marketingtools.apple.com/api/v2/us/music/most-played/25/albums.json?t=${Date.now()}`);
-    const data = await res.json();
+    const data = await HejHub.fetchJsonCached(
+      'https://rss.marketingtools.apple.com/api/v2/us/music/most-played/25/albums.json',
+      {
+        cacheKey: 'apple-music-most-played-us-albums',
+        ttl: 6 * 60 * 60 * 1000
+      }
+    );
     const albums = data?.feed?.results || [];
-    const album = pickDifferent(albums.slice(0, 25), 'hejhub:lastAppleAlbum');
+    const album = HejHub.pickDifferent(albums.slice(0, 25), 'hejhub:lastAppleAlbum');
     if (!album) return;
     tile.href = album.url || tile.href;
     tile.setAttribute('aria-label', album.name ? `Apple Music album: ${album.name}` : 'Apple Music album');
@@ -307,8 +284,7 @@ const roryShelfFallback = [
 function applyBookRecommendation(book, fallbackBooks = roryShelfFallback) {
   const tile = document.querySelector('.tile-books');
   const cover = document.getElementById('book-cover');
-  const title = document.getElementById('book-title');
-  if (!tile || !cover || !title) return;
+  if (!tile || !cover) return;
   if (!book?.cover) return;
 
   const author = book.author ? ` by ${book.author}` : '';
@@ -324,7 +300,7 @@ function applyBookRecommendation(book, fallbackBooks = roryShelfFallback) {
 }
 
 async function loadBookRecommendation() {
-  applyBookRecommendation(pickDifferent(roryShelfFallback, 'hejhub:lastBook'));
+  applyBookRecommendation(HejHub.pickDifferent(roryShelfFallback, 'hejhub:lastBook'));
 
   try {
     const query = `query getShelfBySlug($shelfSlug: String!) {
@@ -336,12 +312,15 @@ async function loadBookRecommendation() {
         }
       }
     }`;
-    const res = await fetch('https://api.literal.club/graphql', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ query, variables: { shelfSlug: 'rorys-reading-list-299lk23' } })
+    const data = await HejHub.fetchJsonCached('https://api.literal.club/graphql', {
+      cacheKey: 'literal-rory-reading-list',
+      ttl: 12 * 60 * 60 * 1000,
+      init: {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ query, variables: { shelfSlug: 'rorys-reading-list-299lk23' } })
+      }
     });
-    const data = await res.json();
     const books = (data?.data?.shelf?.books || [])
       .filter(book => book.cover)
       .map(book => ({
@@ -351,18 +330,21 @@ async function loadBookRecommendation() {
       }));
 
     if (books.length) {
-      applyBookRecommendation(pickDifferent(books, 'hejhub:lastBook'), books);
+      applyBookRecommendation(HejHub.pickDifferent(books, 'hejhub:lastBook'), books);
     }
   } catch {}
 }
 
 rotateHeadline();
 setupModeSwitch();
-setupPhysicality();
-loadGitHubDots();
+HejHub.setupPhysicality('.tile');
 rotateYouTubeThumb();
-loadYouTubeSubscriberCount();
 rotateFallbackAlbum();
-loadLetterboxd();
-loadAppleAlbum();
-loadBookRecommendation();
+
+Promise.allSettled([
+  loadGitHubDots(),
+  loadYouTubeSubscriberCount(),
+  loadLetterboxd(),
+  loadAppleAlbum(),
+  loadBookRecommendation()
+]);
