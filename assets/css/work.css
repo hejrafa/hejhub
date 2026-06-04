@@ -30,7 +30,7 @@
 .work-bento {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: 190px 190px 150px 132px;
+  grid-template-rows: repeat(4, 129px);
   gap: var(--gap);
   padding: 12px;
   border: 2px solid #3b185f;
