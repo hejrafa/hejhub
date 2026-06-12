@@ -1,0 +1,244 @@
+/* Consume-mode tile placement, media, and artwork. */
+
+.tile-letterboxd {
+  --tile-bg: var(--orange);
+  --tilt: -1deg;
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 2;
+  color: var(--ink);
+  overflow: visible;
+}
+
+.tile-letterboxd .tile-title {
+  max-width: 100%;
+  font-size: var(--tile-title-feature);
+  white-space: nowrap;
+}
+
+.tile-youtube {
+  --tile-bg: var(--pink);
+  --tilt: 1deg;
+  grid-column: 7 / span 5;
+  grid-row: 1 / span 2;
+  color: var(--maroon);
+}
+
+.tile-youtube .tile-title {
+  max-width: calc(100% - 116px);
+  font-size: var(--tile-title-feature);
+}
+
+.tile-youtube .tile-icon {
+  right: 34px;
+  bottom: 42px;
+  width: 74px;
+  height: 74px;
+  opacity: 0.9;
+  --icon-tilt: 2deg;
+}
+
+.tile-bsky {
+  --tile-bg: var(--blue);
+  --tilt: -1deg;
+  --icon-tilt: 7deg;
+  grid-column: 1 / span 4;
+  grid-row: 3;
+}
+
+.tile-pinterest .tile-title,
+.tile-twitch .tile-title {
+  max-width: calc(100% - 90px);
+  font-size: var(--tile-title-side);
+}
+
+.tile-bsky .tile-title,
+.tile-reddit .tile-title,
+.tile-music .tile-title,
+.tile-books .tile-title {
+  max-width: calc(100% - 82px);
+  font-size: var(--tile-title-small);
+}
+
+.tile-twitch {
+  --tile-bg: #c7abf6;
+  --tilt: 1deg;
+  --icon-tilt: -4deg;
+  color: var(--maroon);
+  grid-column: 12 / span 5;
+  grid-row: 2;
+}
+
+.tile-pinterest {
+  --tile-bg: var(--peach);
+  --tilt: -1deg;
+  --icon-tilt: -8deg;
+  grid-column: 12 / span 5;
+  grid-row: 1;
+}
+
+.tile-reddit {
+  --tile-bg: var(--green);
+  --tilt: 0.7deg;
+  --icon-tilt: 4deg;
+  grid-column: 5 / span 4;
+  grid-row: 3;
+}
+
+.tile-reddit .tile-icon {
+  right: 20px;
+  bottom: 18px;
+}
+
+.tile-music {
+  --tile-bg: var(--yellow);
+  --tilt: -0.8deg;
+  grid-column: 9 / span 4;
+  grid-row: 3;
+}
+
+.tile-books {
+  --tile-bg: var(--cream);
+  --tilt: 0.8deg;
+  grid-column: 13 / span 4;
+  grid-row: 3;
+}
+
+.youtube-thumb {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  z-index: 4;
+  width: min(64%, 300px);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 4px solid var(--line);
+  border-radius: 14px;
+  box-shadow:
+    0 12px 0 rgba(45, 5, 4, 0.16),
+    0 20px 20px rgba(47, 35, 20, 0.1);
+  transform: translate(-50%, -50%) translateZ(42px) rotate(-3deg);
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 220ms ease;
+}
+
+.tile:hover .youtube-thumb {
+  transform: translate(-50%, calc(-50% - 8px)) translateZ(52px) rotate(-5deg);
+  box-shadow:
+    0 16px 0 rgba(45, 5, 4, 0.16),
+    0 26px 26px rgba(47, 35, 20, 0.12);
+}
+
+.poster-stack {
+  position: relative;
+  z-index: 4;
+  width: min(100%, 420px);
+  height: 214px;
+  margin: -32px auto 8px;
+}
+
+.poster {
+  position: absolute;
+  top: 0;
+  width: 134px;
+  height: 198px;
+  overflow: hidden;
+  border: 4px solid rgba(20, 19, 19, 0.88);
+  border-radius: 7px;
+  background: #5b320d;
+  box-shadow:
+    0 12px 0 rgba(45, 5, 4, 0.18),
+    0 20px 20px rgba(47, 35, 20, 0.1);
+}
+
+.poster::after,
+.album-cover::after,
+.book-cover::after {
+  content: none;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ghost-poster {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent),
+    repeating-linear-gradient(90deg, #4c2a0e 0 28px, #6d3d12 28px 56px);
+}
+
+.poster-a {
+  left: -6px;
+  transform: translateZ(24px) rotate(-6deg);
+}
+
+.poster-b {
+  left: 82px;
+  transform: translateZ(32px) rotate(4deg);
+}
+
+.poster-c {
+  left: 170px;
+  transform: translateZ(40px) rotate(-3deg);
+}
+
+.poster-d {
+  left: 258px;
+  transform: translateZ(48px) rotate(5deg);
+}
+
+.album-cover {
+  position: absolute;
+  right: 18px;
+  top: -14px;
+  z-index: 4;
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  border: 4px solid var(--line);
+  border-radius: 14px;
+  box-shadow:
+    0 12px 0 rgba(45, 5, 4, 0.16),
+    0 20px 20px rgba(47, 35, 20, 0.1);
+  transform: translateZ(42px) rotate(6deg);
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 220ms ease;
+}
+
+.tile-music .tile-title {
+  max-width: calc(100% - 92px);
+}
+
+.book-cover {
+  position: absolute;
+  right: 32px;
+  top: -32px;
+  z-index: 4;
+  width: 104px;
+  height: 160px;
+  object-fit: cover;
+  border: 4px solid var(--line);
+  border-radius: 8px;
+  box-shadow:
+    0 12px 0 rgba(45, 5, 4, 0.14),
+    0 20px 20px rgba(47, 35, 20, 0.08);
+  transform: translateZ(42px) rotate(-6deg);
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 220ms ease;
+}
+
+.tile:hover .album-cover {
+  transform: translateY(-8px) translateZ(52px) rotate(9deg);
+  box-shadow:
+    0 16px 0 rgba(45, 5, 4, 0.16),
+    0 26px 26px rgba(47, 35, 20, 0.12);
+}
+
+.tile:hover .book-cover {
+  transform: translateY(-8px) translateZ(52px) rotate(-9deg);
+  box-shadow:
+    0 16px 0 rgba(45, 5, 4, 0.14),
+    0 26px 26px rgba(47, 35, 20, 0.1);
+}
+
+.tile-books .tile-title {
+  max-width: calc(100% - 118px);
+}

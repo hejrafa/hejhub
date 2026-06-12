@@ -1,0 +1,33 @@
+/* Homepage panel and bento shell layout. */
+
+.panel {
+  display: none;
+}
+
+.panel.is-active {
+  display: block;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  grid-template-rows: 190px 190px 146px;
+  gap: var(--gap);
+  padding: 12px;
+  border: 2px solid var(--maroon);
+  border-radius: calc(var(--radius) + 8px);
+  background: var(--maroon);
+  box-shadow:
+    0 12px 0 rgba(45, 5, 4, 0.22),
+    0 32px 62px rgba(47, 35, 20, 0.18);
+  overflow: visible;
+  perspective: 1100px;
+}
+
+body[data-mode="create"] .bento {
+  border-color: var(--create-frame);
+  background: var(--create-frame);
+  box-shadow:
+    0 12px 0 rgba(16, 16, 16, 0.2),
+    0 32px 62px rgba(20, 19, 19, 0.18);
+}

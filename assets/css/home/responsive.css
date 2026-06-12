@@ -1,0 +1,144 @@
+/* Homepage responsive overrides. */
+
+@media (max-width: 760px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: minmax(132px, auto);
+  }
+
+  .tile-letterboxd,
+  .tile-youtube,
+  .tile-reddit {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 270px;
+  }
+
+  .tile-bsky,
+  .tile-twitch,
+  .tile-pinterest,
+  .tile-reddit,
+  .tile-music,
+  .tile-books,
+  .tile-claude,
+  .tile-curseforge,
+  .tile-epidemic {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .tile-reddit {
+    grid-column: span 1;
+    min-height: 126px;
+  }
+
+  .tile-create-youtube {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 260px;
+    order: 1;
+  }
+
+  .tile-claude {
+    order: 2;
+  }
+
+  .tile-curseforge {
+    order: 3;
+  }
+
+  .tile-epidemic {
+    order: 4;
+  }
+
+  .tile-github {
+    grid-column: span 1;
+    grid-row: auto;
+    min-height: 148px;
+    order: 5;
+  }
+
+  .create-count {
+    font-size: 74px;
+  }
+
+  .github-dots {
+    right: 14px;
+    top: 36px;
+    width: min(54%, 150px);
+    max-height: 46px;
+    gap: 3px;
+  }
+
+  .tile-github .tile-title {
+    max-width: calc(100% - 64px);
+    transform: translateZ(44px);
+  }
+
+  .tile-github .tile-icon {
+    left: auto;
+    right: 18px;
+    bottom: 16px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .poster-stack {
+    width: 320px;
+    height: 160px;
+  }
+
+  .poster {
+    width: 100px;
+    height: 148px;
+  }
+
+  .poster-a {
+    left: -4px;
+  }
+
+  .poster-b {
+    left: 64px;
+  }
+
+  .poster-c {
+    left: 128px;
+  }
+
+  .poster-d {
+    left: 192px;
+  }
+
+  .tile-youtube .tile-icon {
+    width: 92px;
+    height: 92px;
+  }
+
+  .tile-youtube .tile-title {
+    max-width: calc(100% - 108px);
+  }
+
+  .youtube-thumb {
+    top: 46%;
+    left: 50%;
+    width: min(64%, 230px);
+  }
+
+  .album-cover {
+    top: -10px;
+    width: 92px;
+    height: 92px;
+  }
+
+  .book-cover {
+    top: -18px;
+    right: 18px;
+    width: 74px;
+    height: 116px;
+  }
+
+  .tile-books .tile-title {
+    max-width: calc(100% - 86px);
+  }
+}

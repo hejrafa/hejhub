@@ -1,0 +1,412 @@
+{
+  "assetVersion": "20260612b",
+  "faviconVersion": "20260611a",
+  "site": {
+    "name": "hejhub",
+    "url": "https://hejhub.com/",
+    "description": "Rafael Polutta's personal link hub for films, music, reading, social links, creator tools, analytics, projects, and daily shortcuts.",
+    "image": "https://hejhub.com/assets/images/portrait.png",
+    "imageAlt": "Rafael Polutta",
+    "contactEmail": "contact@hejrafa.com"
+  },
+  "person": {
+    "id": "https://hejrafa.com/#rafael-polutta",
+    "name": "Rafael Polutta",
+    "alternateName": ["Rafa", "hejrafa"],
+    "url": "https://hejrafa.com/",
+    "image": "https://hejhub.com/assets/images/portrait.png",
+    "email": "mailto:contact@hejrafa.com",
+    "jobTitle": "Product Designer",
+    "description": "Rafael Polutta is a Hamburg-based product designer who builds useful personal tools, design systems, mobile apps, and mindful digital products.",
+    "address": {
+      "locality": "Hamburg",
+      "country": "DE"
+    },
+    "worksFor": {
+      "name": "Phrase",
+      "url": "https://phrase.com/"
+    },
+    "sameAs": [
+      "https://hejrafa.com/",
+      "https://github.com/hejrafa",
+      "https://bsky.app/profile/hejrafa.com",
+      "https://letterboxd.com/hejrafa/",
+      "https://pinterest.com/hejrafa",
+      "https://www.curseforge.com/members/hejrafa/projects",
+      "https://www.youtube.com/@hejrafa"
+    ]
+  },
+  "pages": {
+    "home": {
+      "output": "index.html",
+      "title": "hejhub - Rafael Polutta's Personal Link Hub",
+      "description": "Rafael Polutta's personal link hub for films, music, reading, social links, creator tools, analytics, projects, and daily shortcuts.",
+      "canonical": "https://hejhub.com/",
+      "robots": "index, follow, max-image-preview:large",
+      "dateModified": "2026-06-12",
+      "stylesheetPaths": ["assets/css/core.css", "assets/css/home.css"],
+      "scriptPaths": [
+        "assets/js/shared.js",
+        "assets/js/home-data.js",
+        "assets/js/home/ui.js",
+        "assets/js/home/feeds.js",
+        "assets/js/hejhub.js"
+      ]
+    },
+    "phrase": {
+      "output": "phrase/index.html",
+      "title": "Phrase Work Links - hejhub",
+      "description": "Focused Phrase work links for Rafael Polutta: calendar, inbox, design system, tasks, people tools, and product shortcuts.",
+      "canonical": "https://hejhub.com/phrase/",
+      "robots": "index, follow, max-image-preview:large",
+      "dateModified": "2026-06-12",
+      "stylesheetPaths": ["assets/css/core.css", "assets/css/work.css"],
+      "scriptPaths": ["assets/js/shared.js", "assets/js/phrase.js"],
+      "contactEmail": "rafael.polutta@phrase.com"
+    },
+    "notFound": {
+      "output": "404.html",
+      "title": "404 - hejhub",
+      "description": "This hejhub page does not exist.",
+      "canonical": "https://hejhub.com/404.html",
+      "robots": "noindex, follow",
+      "stylesheetPaths": ["assets/css/core.css", "assets/css/error.css"]
+    }
+  },
+  "home": {
+    "headlineFallback": "Every second counts.",
+    "headlines": [
+      "touch grass.",
+      "exercise.",
+      "one thing.<br>at a time.",
+      "cleaning<br>is meditation.",
+      "cooking<br>is meditation.",
+      "read.<br>every day.",
+      "hold your<br>own joy.",
+      "be thankful.",
+      "respect<br>everyone.",
+      "wasted happy<br>isn't wasted.",
+      "just go<br>for it.",
+      "be private.<br>vibe alone.",
+      "grow<br>in silence.",
+      "every second<br>counts."
+    ],
+    "consumeTiles": [
+      {
+        "className": "tile-letterboxd",
+        "href": "https://letterboxd.com/hejrafa/",
+        "ariaLabel": "Letterboxd recently watched",
+        "kicker": "letterboxd",
+        "titleLines": ["watched"],
+        "kind": "posterStack",
+        "id": "letterboxd-films",
+        "posters": [
+          {
+            "className": "poster-a",
+            "src": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/8/4/2/1197842-i-swear-0-600-0-900-crop.jpg?v=b8f019138e",
+            "alt": "I Swear"
+          },
+          {
+            "className": "poster-b",
+            "src": "https://a.ltrbxd.com/resized/film-poster/5/6/8/5/9/6/568596-roadrunner-a-film-about-anthony-bourdain-0-600-0-900-crop.jpg?v=a70acefc44",
+            "alt": "Roadrunner: A Film About Anthony Bourdain"
+          },
+          {
+            "className": "poster-c",
+            "src": "https://a.ltrbxd.com/resized/film-poster/2/9/3/4/6/5/293465-top-gun-maverick-0-600-0-900-crop.jpg?v=9f8af0f61b",
+            "alt": "Top Gun: Maverick"
+          },
+          {
+            "className": "poster-d",
+            "src": "https://a.ltrbxd.com/resized/film-poster/1/0/9/8/7/8/2/1098782-nuremberg-2025-0-600-0-900-crop.jpg?v=954f98ffb4",
+            "alt": "Nuremberg"
+          }
+        ]
+      },
+      {
+        "className": "tile-youtube",
+        "href": "https://www.youtube.com/@casey",
+        "ariaLabel": "YouTube: Casey Neistat",
+        "kicker": "youtube",
+        "titleLines": ["subs"],
+        "kind": "youtubeThumb",
+        "thumbId": "youtube-thumb",
+        "thumbSrc": "https://yt3.googleusercontent.com/ytc/AIdro_n4AHNRd0upuWqg3NZq4iXWP5JSbnKHh_nbzhOmgGzUc3k=s900-c-k-c0x00ffffff-no-rj",
+        "thumbAlt": "Casey Neistat",
+        "icon": "assets/icons/youtube.svg"
+      },
+      {
+        "className": "tile-twitch",
+        "href": "https://www.twitch.tv/directory/following/live",
+        "ariaLabel": "Twitch following live",
+        "kicker": "twitch",
+        "titleLines": ["live now?"],
+        "icon": "assets/icons/twitch-glitch.svg"
+      },
+      {
+        "className": "tile-pinterest",
+        "href": "https://pinterest.com/hejrafa",
+        "ariaLabel": "Pinterest",
+        "kicker": "pinterest",
+        "titleLines": ["pin pile"],
+        "icon": "assets/icons/pinterest.svg"
+      },
+      {
+        "className": "tile-bsky",
+        "href": "https://bsky.app/profile/hejrafa.com",
+        "ariaLabel": "Bluesky",
+        "kicker": "bsky",
+        "titleLines": ["sky noise"],
+        "icon": "assets/icons/bluesky.svg"
+      },
+      {
+        "className": "tile-reddit",
+        "href": "https://www.reddit.com",
+        "ariaLabel": "Reddit",
+        "kicker": "reddit",
+        "titleLines": ["deep cuts"],
+        "icon": "assets/icons/reddit-logo.png"
+      },
+      {
+        "className": "tile-music",
+        "href": "https://music.apple.com/us/album/the-great-divide-the-last-of-the-bugs/1894997820",
+        "ariaLabel": "Apple Music album",
+        "kicker": "music",
+        "titleLines": ["fresh spin"],
+        "kind": "album",
+        "coverId": "album-cover",
+        "titleId": "album-title",
+        "coverSrc": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/aa/69/f9aa6992-40ca-a756-85ca-b27c48f7c720/26UMGIM02802.rgb.jpg/600x600bb.jpg",
+        "coverAlt": ""
+      },
+      {
+        "className": "tile-books",
+        "href": "https://literal.club/hejrafa/shelf/rorys-reading-list-299lk23",
+        "ariaLabel": "Rory's Bookshelf on Literal",
+        "kicker": "books",
+        "titleLines": ["rory shelf"],
+        "kind": "book",
+        "coverId": "book-cover",
+        "titleId": "book-title",
+        "coverSrc": "https://assets.literal.club/4/ckmauh7bi20171kjatnt6hlsd.jpg",
+        "coverAlt": "In Cold Blood"
+      }
+    ],
+    "createTiles": [
+      {
+        "className": "tile-create-youtube",
+        "href": "https://studio.youtube.com",
+        "ariaLabel": "YouTube Studio",
+        "kicker": "youtube studio",
+        "titleLines": ["subs"],
+        "countId": "youtube-sub-count",
+        "countFallback": "--",
+        "icon": "assets/icons/youtube.svg"
+      },
+      {
+        "className": "tile-claude",
+        "href": "https://claude.ai",
+        "ariaLabel": "Claude",
+        "kicker": "claude",
+        "titleLines": ["prompt", "forge"],
+        "icon": "assets/icons/work/claude.svg"
+      },
+      {
+        "className": "tile-curseforge",
+        "href": "https://www.curseforge.com/members/hejrafa/projects",
+        "ariaLabel": "CurseForge projects",
+        "kicker": "curseforge",
+        "titleLines": ["mod", "forge"],
+        "icon": "assets/icons/curseforge.svg"
+      },
+      {
+        "className": "tile-epidemic",
+        "href": "https://www.epidemicsound.com/music/featured/",
+        "ariaLabel": "Epidemic Sound",
+        "kicker": "epidemic",
+        "titleLines": ["score", "hunt"],
+        "icon": "assets/icons/epidemic.svg"
+      },
+      {
+        "className": "tile-github",
+        "href": "https://github.com/hejrafa",
+        "ariaLabel": "GitHub profile",
+        "kicker": "github",
+        "titleLines": ["code", "garden"],
+        "icon": "assets/icons/github.svg",
+        "extraHtml": "<div class=\"github-dots\" id=\"github-dots\" aria-hidden=\"true\"></div>"
+      }
+    ]
+  },
+  "phrase": {
+    "headlineFallback": "deep work.",
+    "headlines": ["deep work.", "ship it.", "focus mode.", "small steps."],
+    "tiles": [
+      {
+        "className": "tile-work-calendar",
+        "href": "https://calendar.google.com/calendar/u/0/r/week?pli=1",
+        "ariaLabel": "Google Calendar",
+        "kicker": "calendar",
+        "titleLines": ["week", "view"],
+        "icon": "assets/icons/work/googlecalendar.svg"
+      },
+      {
+        "className": "tile-work-mail",
+        "href": "https://mail.google.com/mail/u/0/#inbox",
+        "ariaLabel": "Gmail inbox",
+        "kicker": "gmail",
+        "titleLines": ["inbox"],
+        "icon": "assets/icons/work/gmail.svg"
+      },
+      {
+        "className": "tile-work-syntax",
+        "href": "https://design.phrase.com/81cc57001/p/69797f-syntax",
+        "ariaLabel": "Phrase Syntax in Figma",
+        "kicker": "syntax",
+        "titleLines": ["design", "system"],
+        "icon": "assets/icons/work/phrase.png",
+        "iconClassName": "work-logo-phrase"
+      },
+      {
+        "className": "tile-work-okta",
+        "href": "https://memsource.okta.com/app/UserHome",
+        "ariaLabel": "Okta apps",
+        "kicker": "okta",
+        "titleLines": ["app", "home"],
+        "icon": "assets/icons/work/okta.svg"
+      },
+      {
+        "className": "tile-work-personio",
+        "href": "https://phrase.app.personio.com",
+        "ariaLabel": "Personio",
+        "kicker": "personio",
+        "titleLines": ["people", "things"],
+        "icon": "assets/icons/work/personio.svg"
+      },
+      {
+        "className": "tile-work-jira",
+        "href": "https://phrase.atlassian.net/jira/software/c/projects/DESIGN/boards/144?assignee=5f72e890459d4200694e8195",
+        "ariaLabel": "Jira design board",
+        "kicker": "jira",
+        "titleLines": ["design", "board"],
+        "icon": "assets/icons/work/jira.svg"
+      },
+      {
+        "className": "tile-work-claude",
+        "href": "https://claude.ai",
+        "ariaLabel": "Claude",
+        "kicker": "claude",
+        "titleLines": ["thinking", "room"],
+        "icon": "assets/icons/work/claude.svg"
+      },
+      {
+        "className": "tile-work-phrase",
+        "href": "https://phrase.com",
+        "ariaLabel": "Phrase",
+        "kicker": "phrase.com",
+        "titleLines": ["home", "base"],
+        "icon": "assets/icons/work/phrase.png",
+        "iconClassName": "work-logo-phrase"
+      }
+    ]
+  },
+  "dynamic": {
+    "youtubeSubscriberChannelId": "UCzhKeHDJiADSCY8uoZEub3Q",
+    "youtubeCreators": [
+      {
+        "name": "Casey Neistat",
+        "url": "https://www.youtube.com/@casey",
+        "image": "https://yt3.googleusercontent.com/ytc/AIdro_n4AHNRd0upuWqg3NZq4iXWP5JSbnKHh_nbzhOmgGzUc3k=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "Peter McKinnon",
+        "url": "https://www.youtube.com/@petermckinnon",
+        "image": "https://yt3.googleusercontent.com/vFY_kQ7ck1HJksGwCaVZ7N29GPwb_RlXRPn2XxNqgw2Jbe0_gwsgw29ycWyKodpktRPSP-iA=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "Trevor Noah",
+        "url": "https://www.youtube.com/@trevornoah",
+        "image": "https://yt3.googleusercontent.com/FsjWQR7894C-1p9vGx1uULbdjcg_oDzswdZgC0pLcaj0JHNM1-LhI7Pd3Hfz7Uq2FKd-AzLE=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "James Hoffmann",
+        "url": "https://www.youtube.com/@jameshoffmann",
+        "image": "https://yt3.googleusercontent.com/2k3-P8cX-0sawteUmQSzaQb7pLaCOKcNtEYDEXy1y8Y5wv97Ecgzhgg50b6NYCwxm677h9bT=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "Life Of Riza",
+        "url": "https://www.youtube.com/@lifeofriza",
+        "image": "https://yt3.googleusercontent.com/Ts7Rj0JAskdlLrY9WVVTwxik9ItY1PcbtT6rUcVLvxJTtcLOvyaB-TMQnX1b1pyJlLJQLQ5iNQ=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "Marques Brownlee",
+        "url": "https://www.youtube.com/@mkbhd",
+        "image": "https://yt3.googleusercontent.com/qu4TmIaYUlS41-dJ9gZ7DUR3nilvmB5_11i6OKSdvNnBNiyOusZP1bMN6ICnuxtjFBb6ioKgRQ=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "Simone Giertz",
+        "url": "https://www.youtube.com/@simonegiertz",
+        "image": "https://yt3.googleusercontent.com/ytc/AIdro_llfi-8d2Zve1U9FXZPXZsKNB9_65U5gHwKRwAoHLOUDg=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "name": "Hasan Minhaj",
+        "url": "https://www.youtube.com/@hasanminhaj",
+        "image": "https://yt3.googleusercontent.com/ytc/AIdro_nKqoZ48YNFUsi8MvCfiPELs8zXfCCpz1oJ4PiTO1Aol-4=s900-c-k-c0x00ffffff-no-rj"
+      }
+    ],
+    "fallbackAlbums": [
+      {
+        "name": "The Great Divide: The Last Of The Bugs",
+        "url": "https://music.apple.com/us/album/the-great-divide-the-last-of-the-bugs/1894997820",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/aa/69/f9aa6992-40ca-a756-85ca-b27c48f7c720/26UMGIM02802.rgb.jpg/600x600bb.jpg"
+      },
+      {
+        "name": "Kehlani",
+        "url": "https://music.apple.com/us/album/kehlani/1885055310",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/ea/6c/daea6c92-0990-d691-3283-6f019c4c8529/075679584670.jpg/600x600bb.jpg"
+      },
+      {
+        "name": "Dandelion",
+        "url": "https://music.apple.com/us/album/dandelion/1895159736",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/26/35/03/26350323-d656-4817-49e6-4d658af8363a/196874332917.jpg/600x600bb.jpg"
+      },
+      {
+        "name": "OCTANE",
+        "url": "https://music.apple.com/us/album/octane/1871258329",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e8/e5/c6/e8e5c690-a958-622e-eb62-0dce6059300e/075679599360.jpg/600x600bb.jpg"
+      }
+    ],
+    "roryShelfUrl": "https://literal.club/hejrafa/shelf/rorys-reading-list-299lk23",
+    "roryShelfFallback": [
+      { "title": "Sexus", "author": "Henry Miller", "cover": "https://assets.literal.club/4/ckr1tdamn0znc01cr2z688eqw.jpg" },
+      { "title": "In Cold Blood", "author": "Truman Capote", "cover": "https://assets.literal.club/4/ckmauh7bi20171kjatnt6hlsd.jpg" },
+      { "title": "The Year of Magical Thinking", "author": "Joan Didion", "cover": "https://assets.literal.club/4/ckp41n1md133091gjssislev08.jpg" },
+      { "title": "Leaves of Grass", "author": "Walt Whitman", "cover": "https://assets.literal.club/cover/2/cljzzpb6q4967600ihujd7q0shl.jpg" },
+      { "title": "A Heartbreaking Work of Staggering Genius", "author": "Dave Eggers", "cover": "https://assets.literal.club/4/ckpzytuzd1631691rjm6g83vsiv.jpg" },
+      { "title": "A Girl from Yamhill", "author": "Beverly Cleary", "cover": "https://assets.literal.club/2/cktn9z5a31172691yz7amtmet7lu.jpg" },
+      { "title": "The curious incident of the dog in the night-time", "author": "Mark Haddon", "cover": "https://assets.literal.club/4/ckmauj1au26651ijangrlpq96.jpg" },
+      { "title": "Tender Is the Night", "author": "F. Scott Fitzgerald", "cover": "https://assets.literal.club/4/ckqi3rz4c131431j5zxucs46sn.jpg" },
+      { "title": "The Snows of Kilimanjaro and Other Stories", "author": "Ernest Hemingway", "cover": "https://assets.literal.club/4/ckr1v8bx81k1m01crt00017cn.jpg" },
+      { "title": "Northanger Abbey", "author": "Jane Austen", "cover": "https://assets.literal.club/4/ckr1sqf0i0szw01crrgui4z2x.jpg" },
+      { "title": "Atonement", "author": "Ian McEwan", "cover": "https://assets.literal.club/4/ckmauj3sn29021ija7iu2it3t.jpg" },
+      { "title": "In Search of Lost Time", "author": "Marcel Proust", "cover": "https://assets.literal.club/4/ckr1t6myx0xue01crf0ugu7h0.jpg" },
+      { "title": "The Holy Barbarians", "author": "Lawrence Lipton", "cover": "https://assets.literal.club/2/ckt4ly9md1163929l77a5f7grup9.jpg" },
+      { "title": "Europe Through the Back Door", "author": "Rick Steves", "cover": "https://assets.literal.club/cover/4/clo8nqrl04903090hgdhta84kf0.jpg" },
+      { "title": "Letters to a young poet", "author": "Rainer Maria Rilke", "cover": "https://assets.literal.club/cover/5/ckr1s8wje0nw901crnl0zo02z.jpg" }
+    ]
+  },
+  "sitemap": [
+    {
+      "loc": "https://hejhub.com/",
+      "lastmod": "2026-06-12",
+      "changefreq": "monthly",
+      "priority": "1.0"
+    },
+    {
+      "loc": "https://hejhub.com/phrase/",
+      "lastmod": "2026-06-12",
+      "changefreq": "monthly",
+      "priority": "0.7"
+    }
+  ]
+}
