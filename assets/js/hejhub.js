@@ -244,14 +244,14 @@ async function loadAppleAlbum() {
 
   try {
     const data = await HejHub.fetchJsonCached(
-      'https://rss.marketingtools.apple.com/api/v2/us/music/most-played/25/albums.json',
+      'https://rss.marketingtools.apple.com/api/v2/us/music/most-played/100/albums.json',
       {
-        cacheKey: 'apple-music-most-played-us-albums',
+        cacheKey: 'apple-music-most-played-us-albums-100',
         ttl: 6 * 60 * 60 * 1000
       }
     );
     const albums = data?.feed?.results || [];
-    const album = HejHub.pickDifferent(albums.slice(0, 25), 'hejhub:lastAppleAlbum');
+    const album = HejHub.pickDifferent(albums.slice(0, 100), 'hejhub:lastAppleAlbum');
     if (!album) return;
     tile.href = album.url || tile.href;
     tile.setAttribute('aria-label', album.name ? `Apple Music album: ${album.name}` : 'Apple Music album');

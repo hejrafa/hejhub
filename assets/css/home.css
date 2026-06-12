@@ -10,7 +10,7 @@
 
 .bento {
   display: grid;
-  grid-template-columns: repeat(15, minmax(0, 1fr));
+  grid-template-columns: repeat(16, minmax(0, 1fr));
   grid-template-rows: 190px 190px 146px;
   gap: var(--gap);
   padding: 12px;
@@ -73,7 +73,7 @@ body[data-mode="create"] .bento {
   --tile-bg: var(--blue);
   --tilt: -1deg;
   --icon-tilt: 7deg;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 4;
   grid-row: 3;
 }
 
@@ -96,7 +96,7 @@ body[data-mode="create"] .bento {
   --tilt: 1deg;
   --icon-tilt: -4deg;
   color: var(--maroon);
-  grid-column: 12 / span 4;
+  grid-column: 12 / span 5;
   grid-row: 2;
 }
 
@@ -104,7 +104,7 @@ body[data-mode="create"] .bento {
   --tile-bg: var(--peach);
   --tilt: -1deg;
   --icon-tilt: -8deg;
-  grid-column: 12 / span 4;
+  grid-column: 12 / span 5;
   grid-row: 1;
 }
 
@@ -112,7 +112,7 @@ body[data-mode="create"] .bento {
   --tile-bg: var(--green);
   --tilt: 0.7deg;
   --icon-tilt: 4deg;
-  grid-column: 4 / span 3;
+  grid-column: 5 / span 4;
   grid-row: 3;
 }
 
@@ -124,14 +124,14 @@ body[data-mode="create"] .bento {
 .tile-music {
   --tile-bg: var(--yellow);
   --tilt: -0.8deg;
-  grid-column: 7 / span 4;
+  grid-column: 9 / span 4;
   grid-row: 3;
 }
 
 .tile-books {
   --tile-bg: var(--cream);
   --tilt: 0.8deg;
-  grid-column: 11 / span 5;
+  grid-column: 13 / span 4;
   grid-row: 3;
 }
 
@@ -326,23 +326,13 @@ body[data-mode="create"] .bento {
   color: var(--cream);
 }
 
-.tile-chatgpt {
-  --tile-bg: #232323;
-  --tile-bg-2: #101010;
+.tile-claude {
+  --tile-bg: #3f2f28;
+  --tile-bg-2: #17110f;
   --tilt: 0.8deg;
   --icon-tilt: -6deg;
   grid-column: 6 / span 5;
   grid-row: 1;
-  color: var(--cream);
-}
-
-.tile-umami {
-  --tile-bg: #2c2720;
-  --tile-bg-2: #12100d;
-  --tilt: -0.4deg;
-  --icon-tilt: 3deg;
-  grid-column: 6 / span 5;
-  grid-row: 2;
   color: var(--cream);
 }
 
@@ -351,7 +341,7 @@ body[data-mode="create"] .bento {
   --tile-bg-2: #110c09;
   --tilt: -1deg;
   --icon-tilt: 8deg;
-  grid-column: 11 / span 5;
+  grid-column: 11 / span 6;
   grid-row: 1;
   color: var(--cream);
 }
@@ -362,7 +352,7 @@ body[data-mode="create"] .bento {
   --tilt: 1deg;
   --icon-tilt: -3deg;
   grid-column: 6 / span 5;
-  grid-row: 3;
+  grid-row: 2 / span 2;
   color: var(--cream);
 }
 
@@ -371,7 +361,7 @@ body[data-mode="create"] .bento {
   --tile-bg-2: #060606;
   --tilt: 0.4deg;
   --icon-tilt: -4deg;
-  grid-column: 11 / span 5;
+  grid-column: 11 / span 6;
   grid-row: 2 / span 2;
   color: var(--cream);
 }
@@ -402,22 +392,20 @@ body[data-mode="create"] .bento {
   height: 92px;
 }
 
-.tile-chatgpt .tile-title,
-.tile-umami .tile-title,
+.tile-claude .tile-title,
 .tile-curseforge .tile-title,
 .tile-epidemic .tile-title {
   font-size: var(--tile-title-side);
 }
 
-.tile-chatgpt .tile-icon,
-.tile-umami .tile-icon,
+.tile-claude .tile-icon,
 .tile-curseforge .tile-icon,
 .tile-epidemic .tile-icon {
   width: 82px;
   height: 82px;
 }
 
-.tile-chatgpt .tile-icon {
+.tile-claude .tile-icon {
   width: 88px;
   height: 88px;
   right: 24px;
@@ -501,8 +489,7 @@ body[data-mode="create"] .bento {
   .tile-reddit,
   .tile-music,
   .tile-books,
-  .tile-chatgpt,
-  .tile-umami,
+  .tile-claude,
   .tile-curseforge,
   .tile-epidemic {
     grid-column: span 1;
@@ -514,14 +501,6 @@ body[data-mode="create"] .bento {
     min-height: 126px;
   }
 
-  .tile-books {
-    grid-column: span 2;
-  }
-
-  .tile-music {
-    grid-column: span 2;
-  }
-
   .tile-create-youtube {
     grid-column: span 2;
     grid-row: auto;
@@ -529,15 +508,15 @@ body[data-mode="create"] .bento {
     order: 1;
   }
 
-  .tile-chatgpt {
+  .tile-claude {
     order: 2;
   }
 
-  .tile-umami {
+  .tile-curseforge {
     order: 3;
   }
 
-  .tile-curseforge {
+  .tile-epidemic {
     order: 4;
   }
 
@@ -546,11 +525,6 @@ body[data-mode="create"] .bento {
     grid-row: auto;
     min-height: 148px;
     order: 5;
-  }
-
-  .tile-epidemic {
-    grid-column: span 2;
-    order: 6;
   }
 
   .create-count {
