@@ -1,5 +1,5 @@
 {
-  "assetVersion": "20260612b",
+  "assetVersion": "20260813a",
   "faviconVersion": "20260611a",
   "site": {
     "name": "hejhub",
@@ -43,7 +43,7 @@
       "description": "Rafael Polutta's personal link hub for films, music, reading, social links, creator tools, analytics, projects, and daily shortcuts.",
       "canonical": "https://hejhub.com/",
       "robots": "index, follow, max-image-preview:large",
-      "dateModified": "2026-06-12",
+      "dateModified": "2026-08-13",
       "stylesheetPaths": ["assets/css/core.css", "assets/css/home.css"],
       "scriptPaths": [
         "assets/js/shared.js",
@@ -59,7 +59,7 @@
       "description": "Focused Phrase work links for Rafael Polutta: calendar, inbox, design system, tasks, people tools, and product shortcuts.",
       "canonical": "https://hejhub.com/phrase/",
       "robots": "index, follow, max-image-preview:large",
-      "dateModified": "2026-06-12",
+      "dateModified": "2026-08-13",
       "stylesheetPaths": ["assets/css/core.css", "assets/css/work.css"],
       "scriptPaths": ["assets/js/shared.js", "assets/js/phrase.js"],
       "contactEmail": "rafael.polutta@phrase.com"
@@ -76,28 +76,28 @@
   "home": {
     "headlineFallback": "Every second counts.",
     "headlines": [
-      "touch grass.",
-      "exercise.",
-      "one thing.<br>at a time.",
-      "cleaning<br>is meditation.",
-      "cooking<br>is meditation.",
-      "read.<br>every day.",
-      "hold your<br>own joy.",
-      "be thankful.",
-      "respect<br>everyone.",
-      "wasted happy<br>isn't wasted.",
-      "just go<br>for it.",
-      "be private.<br>vibe alone.",
-      "grow<br>in silence.",
-      "every second<br>counts."
+      "Touch grass.",
+      "Exercise.",
+      "One thing.<br>at a time.",
+      "Cleaning<br>is meditation.",
+      "Cooking<br>is meditation.",
+      "Read.<br>every day.",
+      "Hold your<br>own joy.",
+      "Be thankful.",
+      "Respect<br>everyone.",
+      "Wasted happy<br>isn't wasted.",
+      "Just go<br>for it.",
+      "Be private.<br>vibe alone.",
+      "Grow<br>in silence.",
+      "Every second<br>counts."
     ],
     "consumeTiles": [
       {
         "className": "tile-letterboxd",
         "href": "https://letterboxd.com/hejrafa/",
         "ariaLabel": "Letterboxd recently watched",
-        "kicker": "letterboxd",
-        "titleLines": ["watched"],
+        "kicker": "Letterboxd",
+        "titleLines": ["Watched"],
         "kind": "posterStack",
         "id": "letterboxd-films",
         "posters": [
@@ -127,8 +127,8 @@
         "className": "tile-youtube",
         "href": "https://www.youtube.com/@casey",
         "ariaLabel": "YouTube: Casey Neistat",
-        "kicker": "youtube",
-        "titleLines": ["subs"],
+        "kicker": "YouTube",
+        "titleLines": ["Subs"],
         "kind": "youtubeThumb",
         "thumbId": "youtube-thumb",
         "thumbSrc": "https://yt3.googleusercontent.com/ytc/AIdro_n4AHNRd0upuWqg3NZq4iXWP5JSbnKHh_nbzhOmgGzUc3k=s900-c-k-c0x00ffffff-no-rj",
@@ -139,40 +139,40 @@
         "className": "tile-twitch",
         "href": "https://www.twitch.tv/directory/following/live",
         "ariaLabel": "Twitch following live",
-        "kicker": "twitch",
-        "titleLines": ["live now?"],
+        "kicker": "Twitch",
+        "titleLines": ["Live now?"],
         "icon": "assets/icons/twitch-glitch.svg"
       },
       {
         "className": "tile-pinterest",
         "href": "https://pinterest.com/hejrafa",
         "ariaLabel": "Pinterest",
-        "kicker": "pinterest",
-        "titleLines": ["pin pile"],
+        "kicker": "Pinterest",
+        "titleLines": ["Pin pile"],
         "icon": "assets/icons/pinterest.svg"
       },
       {
         "className": "tile-bsky",
         "href": "https://bsky.app/profile/hejrafa.com",
         "ariaLabel": "Bluesky",
-        "kicker": "bsky",
-        "titleLines": ["sky noise"],
+        "kicker": "Bluesky",
+        "titleLines": ["Sky noise"],
         "icon": "assets/icons/bluesky.svg"
       },
       {
         "className": "tile-reddit",
         "href": "https://www.reddit.com",
         "ariaLabel": "Reddit",
-        "kicker": "reddit",
-        "titleLines": ["deep cuts"],
+        "kicker": "Reddit",
+        "titleLines": ["Deep cuts"],
         "icon": "assets/icons/reddit-logo.png"
       },
       {
         "className": "tile-music",
         "href": "https://music.apple.com/us/album/the-great-divide-the-last-of-the-bugs/1894997820",
         "ariaLabel": "Apple Music album",
-        "kicker": "music",
-        "titleLines": ["fresh spin"],
+        "kicker": "Music",
+        "titleLines": ["Fresh spin"],
         "kind": "album",
         "coverId": "album-cover",
         "titleId": "album-title",
@@ -183,8 +183,8 @@
         "className": "tile-books",
         "href": "https://literal.club/hejrafa/shelf/rorys-reading-list-299lk23",
         "ariaLabel": "Rory's Bookshelf on Literal",
-        "kicker": "books",
-        "titleLines": ["rory shelf"],
+        "kicker": "Books",
+        "titleLines": ["Rory shelf"],
         "kind": "book",
         "coverId": "book-cover",
         "titleId": "book-title",
@@ -197,8 +197,8 @@
         "className": "tile-create-youtube",
         "href": "https://studio.youtube.com",
         "ariaLabel": "YouTube Studio",
-        "kicker": "youtube studio",
-        "titleLines": ["subs"],
+        "kicker": "YouTube Studio",
+        "titleLines": ["Subs"],
         "countId": "youtube-sub-count",
         "countFallback": "--",
         "icon": "assets/icons/youtube.svg"
@@ -207,63 +207,71 @@
         "className": "tile-claude",
         "href": "https://claude.ai",
         "ariaLabel": "Claude",
-        "kicker": "claude",
-        "titleLines": ["prompt", "forge"],
+        "kicker": "Claude",
+        "titleLines": ["Prompt", "forge"],
         "icon": "assets/icons/work/claude.svg"
+      },
+      {
+        "className": "tile-chatgpt",
+        "href": "https://chatgpt.com/",
+        "ariaLabel": "ChatGPT",
+        "kicker": "ChatGPT",
+        "titleLines": ["Idea", "lab"],
+        "icon": "assets/icons/openai.svg"
       },
       {
         "className": "tile-curseforge",
         "href": "https://www.curseforge.com/members/hejrafa/projects",
         "ariaLabel": "CurseForge projects",
-        "kicker": "curseforge",
-        "titleLines": ["mod", "forge"],
+        "kicker": "CurseForge",
+        "titleLines": ["Mod", "forge"],
         "icon": "assets/icons/curseforge.svg"
       },
       {
-        "className": "tile-epidemic",
-        "href": "https://www.epidemicsound.com/music/featured/",
-        "ariaLabel": "Epidemic Sound",
-        "kicker": "epidemic",
-        "titleLines": ["score", "hunt"],
-        "icon": "assets/icons/epidemic.svg"
+        "className": "tile-app-store-connect",
+        "href": "https://appstoreconnect.apple.com/apps",
+        "ariaLabel": "App Store Connect apps",
+        "kicker": "App Store Connect",
+        "titleLines": ["Ship", "apps"],
+        "icon": "assets/icons/app-store.svg"
       },
       {
         "className": "tile-github",
         "href": "https://github.com/hejrafa",
         "ariaLabel": "GitHub profile",
-        "kicker": "github",
-        "titleLines": ["code", "garden"],
+        "kicker": "GitHub",
+        "titleLines": ["Code", "garden"],
         "icon": "assets/icons/github.svg",
         "extraHtml": "<div class=\"github-dots\" id=\"github-dots\" aria-hidden=\"true\"></div>"
       }
     ]
   },
   "phrase": {
-    "headlineFallback": "deep work.",
-    "headlines": ["deep work.", "ship it.", "focus mode.", "small steps."],
+    "headlineFallback": "Deep work.",
+    "headlines": ["Deep work.", "Ship it.", "Focus mode.", "Small steps."],
     "tiles": [
       {
         "className": "tile-work-calendar",
         "href": "https://calendar.google.com/calendar/u/0/r/week?pli=1",
         "ariaLabel": "Google Calendar",
-        "kicker": "calendar",
-        "titleLines": ["week", "view"],
+        "kicker": "Calendar",
+        "titleLines": ["Week", "view"],
         "icon": "assets/icons/work/googlecalendar.svg"
       },
       {
         "className": "tile-work-mail",
         "href": "https://mail.google.com/mail/u/0/#inbox",
         "ariaLabel": "Gmail inbox",
-        "kicker": "gmail",
-        "titleLines": ["inbox"],
+        "kicker": "Gmail",
+        "titleLines": ["Inbox"],
         "icon": "assets/icons/work/gmail.svg"
       },
       {
         "className": "tile-work-syntax",
         "href": "https://design.phrase.com/81cc57001/p/69797f-syntax",
         "ariaLabel": "Phrase Syntax in Figma",
-        "kicker": "syntax",
-        "titleLines": ["design", "system"],
+        "kicker": "Syntax",
+        "titleLines": ["Design", "system"],
         "icon": "assets/icons/work/phrase.png",
         "iconClassName": "work-logo-phrase"
       },
@@ -271,40 +279,40 @@
         "className": "tile-work-okta",
         "href": "https://memsource.okta.com/app/UserHome",
         "ariaLabel": "Okta apps",
-        "kicker": "okta",
-        "titleLines": ["app", "home"],
+        "kicker": "Okta",
+        "titleLines": ["App", "home"],
         "icon": "assets/icons/work/okta.svg"
       },
       {
         "className": "tile-work-personio",
         "href": "https://phrase.app.personio.com",
         "ariaLabel": "Personio",
-        "kicker": "personio",
-        "titleLines": ["people", "things"],
+        "kicker": "Personio",
+        "titleLines": ["People", "things"],
         "icon": "assets/icons/work/personio.svg"
       },
       {
         "className": "tile-work-jira",
         "href": "https://phrase.atlassian.net/jira/software/c/projects/DESIGN/boards/144?assignee=5f72e890459d4200694e8195",
         "ariaLabel": "Jira design board",
-        "kicker": "jira",
-        "titleLines": ["design", "board"],
+        "kicker": "Jira",
+        "titleLines": ["Design", "board"],
         "icon": "assets/icons/work/jira.svg"
       },
       {
         "className": "tile-work-claude",
         "href": "https://claude.ai",
         "ariaLabel": "Claude",
-        "kicker": "claude",
-        "titleLines": ["thinking", "room"],
+        "kicker": "Claude",
+        "titleLines": ["Thinking", "room"],
         "icon": "assets/icons/work/claude.svg"
       },
       {
         "className": "tile-work-phrase",
         "href": "https://phrase.com",
         "ariaLabel": "Phrase",
-        "kicker": "phrase.com",
-        "titleLines": ["home", "base"],
+        "kicker": "Phrase",
+        "titleLines": ["Home", "base"],
         "icon": "assets/icons/work/phrase.png",
         "iconClassName": "work-logo-phrase"
       }
@@ -398,13 +406,13 @@
   "sitemap": [
     {
       "loc": "https://hejhub.com/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-08-13",
       "changefreq": "monthly",
       "priority": "1.0"
     },
     {
       "loc": "https://hejhub.com/phrase/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-08-13",
       "changefreq": "monthly",
       "priority": "0.7"
     }

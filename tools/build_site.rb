@@ -245,8 +245,8 @@ def render_home
         <main>
           <nav class="mode-row" aria-label="Hub mode">
             <div class="mode-switch">
-              <button class="mode-button is-active" type="button" data-mode="consume" aria-pressed="true">consume</button>
-              <button class="mode-button" type="button" data-mode="create" aria-pressed="false">create</button>
+              <button class="mode-button is-active" type="button" data-mode="consume" aria-pressed="true">Consume</button>
+              <button class="mode-button" type="button" data-mode="create" aria-pressed="false">Create</button>
               <span class="mode-thumb" aria-hidden="true"></span>
             </div>
           </nav>
@@ -337,7 +337,7 @@ def render_not_found
 
         <nav class="mode-row error-link-row" aria-label="404 navigation">
           <a class="mode-switch error-switch" href="./" aria-label="Back to hejhub">
-            <span class="mode-button is-active">back to hejhub</span>
+            <span class="mode-button is-active">Back to hejhub</span>
             <span class="mode-thumb" aria-hidden="true"></span>
           </a>
         </nav>
@@ -345,7 +345,7 @@ def render_not_found
         <main class="error-main">
           <section class="error-panel" aria-labelledby="error-title">
             <p class="error-code">404</p>
-            <h2 id="error-title">wrong door.</h2>
+            <h2 id="error-title">Wrong door.</h2>
           </section>
         </main>
 

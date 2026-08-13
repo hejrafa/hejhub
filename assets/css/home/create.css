@@ -1,7 +1,7 @@
 /* Create-mode tile placement, color, and GitHub details. */
 
 .create-bento {
-  grid-template-rows: 190px 190px 146px;
+  grid-template-rows: repeat(3, 178px);
 }
 
 .create-bento .tile {
@@ -61,23 +61,33 @@
   color: var(--cream);
 }
 
-.tile-curseforge {
-  --tile-bg: #2d211b;
-  --tile-bg-2: #110c09;
-  --tilt: -1deg;
-  --icon-tilt: 8deg;
+.tile-chatgpt {
+  --tile-bg: #173c36;
+  --tile-bg-2: #071a17;
+  --tilt: -0.7deg;
+  --icon-tilt: 5deg;
   grid-column: 11 / span 6;
   grid-row: 1;
   color: var(--cream);
 }
 
-.tile-epidemic {
-  --tile-bg: #211f25;
-  --tile-bg-2: #0f0e12;
+.tile-curseforge {
+  --tile-bg: #2d211b;
+  --tile-bg-2: #110c09;
+  --tilt: -1deg;
+  --icon-tilt: 8deg;
+  grid-column: 6 / span 5;
+  grid-row: 2;
+  color: var(--cream);
+}
+
+.tile-app-store-connect {
+  --tile-bg: #0a3653;
+  --tile-bg-2: #031622;
   --tilt: 1deg;
   --icon-tilt: -3deg;
-  grid-column: 6 / span 5;
-  grid-row: 2 / span 2;
+  grid-column: 11 / span 6;
+  grid-row: 2;
   color: var(--cream);
 }
 
@@ -86,8 +96,8 @@
   --tile-bg-2: #060606;
   --tilt: 0.4deg;
   --icon-tilt: -4deg;
-  grid-column: 11 / span 6;
-  grid-row: 2 / span 2;
+  grid-column: 6 / span 11;
+  grid-row: 3;
   color: var(--cream);
 }
 
@@ -118,14 +128,16 @@
 }
 
 .tile-claude .tile-title,
+.tile-chatgpt .tile-title,
 .tile-curseforge .tile-title,
-.tile-epidemic .tile-title {
+.tile-app-store-connect .tile-title {
   font-size: var(--tile-title-side);
 }
 
 .tile-claude .tile-icon,
+.tile-chatgpt .tile-icon,
 .tile-curseforge .tile-icon,
-.tile-epidemic .tile-icon {
+.tile-app-store-connect .tile-icon {
   width: 82px;
   height: 82px;
 }
@@ -133,6 +145,19 @@
 .tile-claude .tile-icon {
   width: 88px;
   height: 88px;
+  right: 24px;
+  bottom: 18px;
+  filter: drop-shadow(8px 10px 0 rgba(0, 0, 0, 0.18));
+}
+
+.tile-chatgpt .tile-icon {
+  fill: #fff8ea;
+  right: 24px;
+  bottom: 18px;
+  filter: drop-shadow(8px 10px 0 rgba(0, 0, 0, 0.18));
+}
+
+.tile-app-store-connect .tile-icon {
   right: 24px;
   bottom: 18px;
   filter: drop-shadow(8px 10px 0 rgba(0, 0, 0, 0.18));

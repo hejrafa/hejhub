@@ -99,7 +99,7 @@
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: 0;
-  text-transform: lowercase;
+  text-transform: none;
   text-shadow: 0 6px 0 rgba(23, 70, 95, 0.08);
 }
 

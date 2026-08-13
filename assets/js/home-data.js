@@ -1,19 +1,19 @@
 window.HejHubData = {
   "headlines": [
-    "touch grass.",
-    "exercise.",
-    "one thing.<br>at a time.",
-    "cleaning<br>is meditation.",
-    "cooking<br>is meditation.",
-    "read.<br>every day.",
-    "hold your<br>own joy.",
-    "be thankful.",
-    "respect<br>everyone.",
-    "wasted happy<br>isn't wasted.",
-    "just go<br>for it.",
-    "be private.<br>vibe alone.",
-    "grow<br>in silence.",
-    "every second<br>counts."
+    "Touch grass.",
+    "Exercise.",
+    "One thing.<br>at a time.",
+    "Cleaning<br>is meditation.",
+    "Cooking<br>is meditation.",
+    "Read.<br>every day.",
+    "Hold your<br>own joy.",
+    "Be thankful.",
+    "Respect<br>everyone.",
+    "Wasted happy<br>isn't wasted.",
+    "Just go<br>for it.",
+    "Be private.<br>vibe alone.",
+    "Grow<br>in silence.",
+    "Every second<br>counts."
   ],
   "youtubeSubscriberChannelId": "UCzhKeHDJiADSCY8uoZEub3Q",
   "youtubeCreators": [

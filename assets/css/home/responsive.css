@@ -22,8 +22,9 @@
   .tile-music,
   .tile-books,
   .tile-claude,
+  .tile-chatgpt,
   .tile-curseforge,
-  .tile-epidemic {
+  .tile-app-store-connect {
     grid-column: span 1;
     grid-row: auto;
   }
@@ -45,18 +46,22 @@
   }
 
   .tile-curseforge {
-    order: 3;
-  }
-
-  .tile-epidemic {
     order: 4;
   }
 
-  .tile-github {
-    grid-column: span 1;
-    grid-row: auto;
-    min-height: 148px;
+  .tile-chatgpt {
+    order: 3;
+  }
+
+  .tile-app-store-connect {
     order: 5;
+  }
+
+  .tile-github {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 168px;
+    order: 6;
   }
 
   .create-count {
