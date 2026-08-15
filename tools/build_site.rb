@@ -364,8 +364,7 @@ def render_home_data_js
     'youtubeSubscriberChannelId' => DATA.fetch('dynamic').fetch('youtubeSubscriberChannelId'),
     'youtubeCreators' => DATA.fetch('dynamic').fetch('youtubeCreators'),
     'fallbackAlbums' => DATA.fetch('dynamic').fetch('fallbackAlbums'),
-    'roryShelfUrl' => DATA.fetch('dynamic').fetch('roryShelfUrl'),
-    'roryShelfFallback' => DATA.fetch('dynamic').fetch('roryShelfFallback')
+    'featuredBooks' => DATA.fetch('dynamic').fetch('featuredBooks')
   }
   "window.HejHubData = #{JSON.pretty_generate(data)};\n"
 end

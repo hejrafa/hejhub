@@ -1,6 +1,6 @@
 {
-  "assetVersion": "20260813a",
-  "faviconVersion": "20260611a",
+  "assetVersion": "20260815d",
+  "faviconVersion": "20260815a",
   "site": {
     "name": "hejhub",
     "url": "https://hejhub.com/",
@@ -43,7 +43,7 @@
       "description": "Rafael Polutta's personal link hub for films, music, reading, social links, creator tools, analytics, projects, and daily shortcuts.",
       "canonical": "https://hejhub.com/",
       "robots": "index, follow, max-image-preview:large",
-      "dateModified": "2026-08-13",
+      "dateModified": "2026-08-15",
       "stylesheetPaths": ["assets/css/core.css", "assets/css/home.css"],
       "scriptPaths": [
         "assets/js/shared.js",
@@ -74,22 +74,19 @@
     }
   },
   "home": {
-    "headlineFallback": "Every second counts.",
+    "headlineFallback": "Stay private.",
     "headlines": [
-      "Touch grass.",
-      "Exercise.",
-      "One thing.<br>at a time.",
-      "Cleaning<br>is meditation.",
-      "Cooking<br>is meditation.",
-      "Read.<br>every day.",
-      "Hold your<br>own joy.",
-      "Be thankful.",
-      "Respect<br>everyone.",
-      "Wasted happy<br>isn't wasted.",
-      "Just go<br>for it.",
-      "Be private.<br>vibe alone.",
-      "Grow<br>in silence.",
-      "Every second<br>counts."
+      "Stay private.",
+      "Work Hard.",
+      "Dress well.",
+      "Eat healthy.",
+      "Talk less.",
+      "Do more.",
+      "Live life.",
+      "Be kind.",
+      "Stay humble.",
+      "Avoid drama.",
+      "Chase goals."
     ],
     "consumeTiles": [
       {
@@ -125,8 +122,8 @@
       },
       {
         "className": "tile-youtube",
-        "href": "https://www.youtube.com/@casey",
-        "ariaLabel": "YouTube: Casey Neistat",
+        "href": "https://www.youtube.com/",
+        "ariaLabel": "YouTube home; featured creator: Casey Neistat",
         "kicker": "YouTube",
         "titleLines": ["Subs"],
         "kind": "youtubeThumb",
@@ -181,15 +178,15 @@
       },
       {
         "className": "tile-books",
-        "href": "https://literal.club/hejrafa/shelf/rorys-reading-list-299lk23",
-        "ariaLabel": "Rory's Bookshelf on Literal",
+        "href": "https://books.apple.com/us/book/black-bag/id6747465250",
+        "ariaLabel": "Booker Prize 2026 longlist: Black Bag by Luke Kennard",
         "kicker": "Books",
-        "titleLines": ["Rory shelf"],
+        "titleLines": ["Fresh read"],
         "kind": "book",
         "coverId": "book-cover",
         "titleId": "book-title",
-        "coverSrc": "https://assets.literal.club/4/ckmauh7bi20171kjatnt6hlsd.jpg",
-        "coverAlt": "In Cold Blood"
+        "coverSrc": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/7e/ba/67/7eba67d0-7514-37e2-f90e-4894322565ec/9781638933397.d.jpg/600x600bb.jpg",
+        "coverAlt": "Black Bag by Luke Kennard"
       }
     ],
     "createTiles": [
@@ -384,29 +381,104 @@
         "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e8/e5/c6/e8e5c690-a958-622e-eb62-0dce6059300e/075679599360.jpg/600x600bb.jpg"
       }
     ],
-    "roryShelfUrl": "https://literal.club/hejrafa/shelf/rorys-reading-list-299lk23",
-    "roryShelfFallback": [
-      { "title": "Sexus", "author": "Henry Miller", "cover": "https://assets.literal.club/4/ckr1tdamn0znc01cr2z688eqw.jpg" },
-      { "title": "In Cold Blood", "author": "Truman Capote", "cover": "https://assets.literal.club/4/ckmauh7bi20171kjatnt6hlsd.jpg" },
-      { "title": "The Year of Magical Thinking", "author": "Joan Didion", "cover": "https://assets.literal.club/4/ckp41n1md133091gjssislev08.jpg" },
-      { "title": "Leaves of Grass", "author": "Walt Whitman", "cover": "https://assets.literal.club/cover/2/cljzzpb6q4967600ihujd7q0shl.jpg" },
-      { "title": "A Heartbreaking Work of Staggering Genius", "author": "Dave Eggers", "cover": "https://assets.literal.club/4/ckpzytuzd1631691rjm6g83vsiv.jpg" },
-      { "title": "A Girl from Yamhill", "author": "Beverly Cleary", "cover": "https://assets.literal.club/2/cktn9z5a31172691yz7amtmet7lu.jpg" },
-      { "title": "The curious incident of the dog in the night-time", "author": "Mark Haddon", "cover": "https://assets.literal.club/4/ckmauj1au26651ijangrlpq96.jpg" },
-      { "title": "Tender Is the Night", "author": "F. Scott Fitzgerald", "cover": "https://assets.literal.club/4/ckqi3rz4c131431j5zxucs46sn.jpg" },
-      { "title": "The Snows of Kilimanjaro and Other Stories", "author": "Ernest Hemingway", "cover": "https://assets.literal.club/4/ckr1v8bx81k1m01crt00017cn.jpg" },
-      { "title": "Northanger Abbey", "author": "Jane Austen", "cover": "https://assets.literal.club/4/ckr1sqf0i0szw01crrgui4z2x.jpg" },
-      { "title": "Atonement", "author": "Ian McEwan", "cover": "https://assets.literal.club/4/ckmauj3sn29021ija7iu2it3t.jpg" },
-      { "title": "In Search of Lost Time", "author": "Marcel Proust", "cover": "https://assets.literal.club/4/ckr1t6myx0xue01crf0ugu7h0.jpg" },
-      { "title": "The Holy Barbarians", "author": "Lawrence Lipton", "cover": "https://assets.literal.club/2/ckt4ly9md1163929l77a5f7grup9.jpg" },
-      { "title": "Europe Through the Back Door", "author": "Rick Steves", "cover": "https://assets.literal.club/cover/4/clo8nqrl04903090hgdhta84kf0.jpg" },
-      { "title": "Letters to a young poet", "author": "Rainer Maria Rilke", "cover": "https://assets.literal.club/cover/5/ckr1s8wje0nw901crnl0zo02z.jpg" }
+    "featuredBooks": [
+      {
+        "title": "The Shadow of the Object",
+        "author": "Chloe Aridjis",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-shadow-of-the-object/id6795757227",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/a6/19/18/a61918fd-9cfb-3ee1-8899-6e1fb02db183/9781635903034.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "Switzy",
+        "author": "Emma Cline",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/switzy/id6756286237",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/8e/7f/2a/8e7f2ac4-6918-2223-8af4-2f57d0ad125a/9780593595251.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "Helen of Nowhere",
+        "author": "Makenna Goodman",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/helen-of-nowhere/id6746347682",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/1d/d0/0e/1dd00eca-2fd7-8a2c-34cf-6b5cbbc8a204/9781566897631.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "The End of Everything",
+        "author": "M. John Harrison",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-end-of-everything/id6793772535",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/30/0a/9b/300a9bdc-bf30-c6d9-2d30-5250bda1fbf8/9798217438679.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "The Disappearers",
+        "author": "Marlon James",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-disappearers/id6758229432",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/82/f4/a8/82f4a8cb-ef5d-b6bd-17a8-25c0ae1beab6/9780593717226.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "Black Bag",
+        "author": "Luke Kennard",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/black-bag/id6747465250",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/7e/ba/67/7eba67d0-7514-37e2-f90e-4894322565ec/9781638933397.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "The Renovation",
+        "author": "Kenan Orhan",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-renovation/id6745791213",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/0f/0d/bf/0f0dbfd6-9baf-764c-554d-4959d9097a4f/9780374609436.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "May We Feed the King",
+        "author": "Rebecca Perry",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/may-we-feed-the-king/id6761430338",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/14/b1/81/14b181df-6c8c-65bf-0435-ad27c5713007/9798893380637.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "The Palm House",
+        "author": "Gwendoline Riley",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-palm-house/id6748626964",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/29/42/c9/2942c9d5-8b76-13f2-9eac-ca399204fa1a/9798896230533.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "The Things We Never Say",
+        "author": "Elizabeth Strout",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-things-we-never-say/id6753041097",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/a8/ba/5e/a8ba5eb3-96c1-3a74-b834-a41170a0aca1/9798217154760.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "John of John",
+        "author": "Douglas Stuart",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/john-of-john-oprahs-book-club/id6746658957",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/4b/a2/a7/4ba2a786-8909-baa0-7f97-c747a2b6e670/9780802167279.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "All Them Dogs",
+        "author": "Djamel White",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/all-them-dogs/id6751254675",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/8d/e8/4a/8de84a70-8645-185d-89f9-597747ccd470/9798217046690.d.jpg/600x600bb.jpg"
+      },
+      {
+        "title": "The Vivisectors",
+        "author": "Missouri Williams",
+        "recognition": "Booker Prize 2026 longlist",
+        "url": "https://books.apple.com/us/book/the-vivisectors/id6752571492",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Publication221/v4/bc/1a/7a/bc1a7aff-30b2-85f5-770c-2faf2a598ebe/9780374619305.jpg/600x600bb.jpg"
+      }
     ]
   },
   "sitemap": [
     {
       "loc": "https://hejhub.com/",
-      "lastmod": "2026-08-13",
+      "lastmod": "2026-08-15",
       "changefreq": "monthly",
       "priority": "1.0"
     },

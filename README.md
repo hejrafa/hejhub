@@ -75,10 +75,10 @@ phrase/index.html       Generated Phrase work links page
 Some tiles enhance themselves with public data when available:
 
 - Letterboxd: pulls recent watched posters from `https://letterboxd.com/hejrafa/rss/` through rss2json.
-- YouTube consume: rotates through a curated set of favorite creator channel images and links to the active creator.
+- YouTube consume: opens the YouTube homepage while rotating through a curated set of favorite creator channel images.
 - YouTube create: pulls public subscriber count for channel `UCzhKeHDJiADSCY8uoZEub3Q`.
-- Apple Music: pulls album artwork from Apple Marketing Tools RSS, with local fallbacks.
-- Books: pulls covers from Rafael's Rory reading shelf on Literal, with a local Rory shelf fallback for offline/file previews.
+- Apple Music: rotates recent charting releases from Apple's Top Albums RSS feed, with local fallbacks.
+- Books: rotates the current English-language Booker Prize longlist and refreshes covers and direct links through Apple Books Search.
 - GitHub: pulls recent contribution levels and renders the last 35 days as dots.
 
 Dynamic JSON requests are cached briefly in `localStorage` and reuse stale data if a public API is slow or unavailable. If no cached response exists, the page keeps its fallback content from `src/data/site.json`.

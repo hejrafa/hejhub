@@ -64,8 +64,7 @@
     const creator = HejHub.pickDifferent(data.youtubeCreators || [], 'hejhub:lastYouTubeCreator');
     if (!creator) return;
 
-    tile.href = creator.url;
-    tile.setAttribute('aria-label', `YouTube: ${creator.name}`);
+    tile.setAttribute('aria-label', `YouTube home; featured creator: ${creator.name}`);
     thumb.src = creator.image;
     thumb.alt = creator.name;
   }
