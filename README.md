@@ -78,7 +78,7 @@ Some tiles enhance themselves with public data when available:
 - YouTube consume: opens the YouTube homepage while rotating through a curated set of favorite creator channel images.
 - YouTube create: pulls public subscriber count for channel `UCzhKeHDJiADSCY8uoZEub3Q`.
 - Apple Music: rotates recent charting releases from Apple's Top Albums RSS feed, with local fallbacks.
-- Books: rotates the current English-language Booker Prize longlist and refreshes covers and direct links through Apple Books Search.
+- Books: rotates the current English-language Booker Prize longlist, links to each official Booker book page, and refreshes cover artwork through Apple Books Search. A weekly GitHub Action checks Booker's official feed and rebuilds the site when a new longlist is announced.
 - GitHub: pulls recent contribution levels and renders the last 35 days as dots.
 
 Dynamic JSON requests are cached briefly in `localStorage` and reuse stale data if a public API is slow or unavailable. If no cached response exists, the page keeps its fallback content from `src/data/site.json`.

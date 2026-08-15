@@ -189,14 +189,13 @@
         const authorMatches = !expectedAuthor || String(result?.artistName || '').toLocaleLowerCase('en').includes(expectedAuthor);
         return titleMatches && authorMatches;
       });
-      if (!exactMatch?.artworkUrl100 || !exactMatch?.trackViewUrl) return;
+      if (!exactMatch?.artworkUrl100) return;
 
       applyBookRecommendation({
         ...selectedBook,
         author: exactMatch.artistName || selectedBook.author,
         cover: appleBookArtworkUrl(exactMatch.artworkUrl100),
-        title: exactMatch.trackName || selectedBook.title,
-        url: exactMatch.trackViewUrl
+        title: exactMatch.trackName || selectedBook.title
       }, featuredBooks);
     } catch {}
   }

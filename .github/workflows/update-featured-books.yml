@@ -1,0 +1,42 @@
+name: Refresh featured books
+
+on:
+  schedule:
+    - cron: '17 7 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-featured-books
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Refresh Booker longlist
+        run: ruby tools/update_featured_books.rb
+
+      - name: Rebuild site
+        run: ruby tools/build_site.rb
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "Featured books are already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/site.json assets/js/home-data.js assets/css/home.css index.html 404.html phrase/index.html sitemap.xml
+          git commit -m "Refresh featured books"
+          git push
