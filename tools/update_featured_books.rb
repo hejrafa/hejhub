@@ -5,12 +5,12 @@ require 'cgi'
 require 'date'
 require 'json'
 require 'net/http'
-require 'rss'
 require 'uri'
 
 ROOT = File.expand_path('..', __dir__)
 DATA_PATH = File.join(ROOT, 'src/data/site.json')
 BOOKER_FEED_URL = 'https://thebookerprizes.substack.com/feed'
+RSS2JSON_URL = 'https://api.rss2json.com/v1/api.json'
 APPLE_BOOKS_SEARCH_URL = 'https://itunes.apple.com/search'
 
 def fetch(uri)
@@ -30,9 +30,12 @@ def text_from_html(html)
 end
 
 def latest_booker_longlist
-  feed = RSS::Parser.parse(fetch(URI(BOOKER_FEED_URL)), false)
-  candidates = feed.items.map do |item|
-    match = item.title.to_s.match(/\AAnnouncing the Booker Prize (\d{4}) longlist\z/i)
+  query = URI.encode_www_form(rss_url: BOOKER_FEED_URL)
+  response = JSON.parse(fetch(URI("#{RSS2JSON_URL}?#{query}")))
+  raise "Booker feed proxy failed: #{response['message']}" unless response['status'] == 'ok'
+
+  candidates = response.fetch('items', []).map do |item|
+    match = item['title'].to_s.match(/\AAnnouncing the Booker Prize (\d{4}) longlist\z/i)
     next unless match
 
     [match[1].to_i, item]
@@ -40,7 +43,7 @@ def latest_booker_longlist
   year, item = candidates.max_by(&:first)
   return [] unless item
 
-  content = item.content_encoded.to_s
+  content = item['content'].to_s
   books = content.scan(%r{<li[^>]*>.*?<a[^>]+href="(https://thebookerprizes\.com/the-booker-library/books/[^"]+)"[^>]*>(.*?)</a>.*?\bby\s*<a[^>]+href="https://thebookerprizes\.com/the-booker-library/authors/[^"]+"[^>]*>(.*?)</a>.*?</li>}im).map do |url, title, author|
     {
       'title' => text_from_html(title),
