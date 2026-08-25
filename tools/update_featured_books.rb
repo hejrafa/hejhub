@@ -5,6 +5,7 @@ require 'cgi'
 require 'date'
 require 'json'
 require 'net/http'
+require 'timeout'
 require 'uri'
 
 ROOT = File.expand_path('..', __dir__)
@@ -12,16 +13,51 @@ DATA_PATH = File.join(ROOT, 'src/data/site.json')
 BOOKER_FEED_URL = 'https://thebookerprizes.substack.com/feed'
 RSS2JSON_URL = 'https://api.rss2json.com/v1/api.json'
 APPLE_BOOKS_SEARCH_URL = 'https://itunes.apple.com/search'
+FETCH_MAX_ATTEMPTS = 4
+FETCH_RETRYABLE_ERRORS = [
+  EOFError,
+  Net::HTTPBadResponse,
+  Net::ProtocolError,
+  SocketError,
+  SystemCallError,
+  Timeout::Error
+].freeze
 
-def fetch(uri)
-  request = Net::HTTP::Get.new(uri)
-  request['User-Agent'] = 'hejhub-book-refresh/1.0'
+def retryable_http_status?(status)
+  [408, 429].include?(status) || (500..599).cover?(status)
+end
 
-  Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https', open_timeout: 10, read_timeout: 30) do |http|
-    response = http.request(request)
-    raise "Request failed with #{response.code}: #{uri}" unless response.is_a?(Net::HTTPSuccess)
+def fetch(uri, sleeper: Kernel.method(:sleep))
+  attempt = 0
 
-    response.body
+  loop do
+    attempt += 1
+    error = nil
+
+    begin
+      request = Net::HTTP::Get.new(uri)
+      request['User-Agent'] = 'hejhub-book-refresh/1.0'
+
+      response = Net::HTTP.start(
+        uri.host,
+        uri.port,
+        use_ssl: uri.scheme == 'https',
+        open_timeout: 10,
+        read_timeout: 30
+      ) { |http| http.request(request) }
+      return response.body if response.is_a?(Net::HTTPSuccess)
+
+      error = RuntimeError.new("Request failed with #{response.code}: #{uri}")
+      raise error unless retryable_http_status?(response.code.to_i)
+    rescue *FETCH_RETRYABLE_ERRORS => transient_error
+      error = RuntimeError.new("Request failed with #{transient_error.class}: #{uri} (#{transient_error.message})")
+    end
+
+    raise error if attempt >= FETCH_MAX_ATTEMPTS
+
+    delay = 2**(attempt - 1)
+    warn "#{error.message}; retrying in #{delay}s (attempt #{attempt + 1}/#{FETCH_MAX_ATTEMPTS})"
+    sleeper.call(delay)
   end
 end
 
@@ -146,39 +182,43 @@ def replace_book_tile(source, book)
   source[0...start_index] + tile + source[(end_index + 1)..]
 end
 
-source = File.read(DATA_PATH)
-data = JSON.parse(source)
-current_books = data.dig('dynamic', 'featuredBooks') || []
-feed_books = latest_booker_longlist
+def main(args = ARGV)
+  source = File.read(DATA_PATH)
+  data = JSON.parse(source)
+  current_books = data.dig('dynamic', 'featuredBooks') || []
+  feed_books = latest_booker_longlist
 
-if feed_books.empty?
-  puts 'No Booker Prize longlist announcement is currently present in the feed.'
-  exit
-end
-
-current_identity = current_books.map { |book| book.values_at('title', 'author', 'recognition', 'url') }
-feed_identity = feed_books.map { |book| book.values_at('title', 'author', 'recognition', 'url') }
-
-if ARGV.include?('--check')
-  checked_books = feed_books.map do |book|
-    book.merge('cover' => apple_cover_for(book))
+  if feed_books.empty?
+    puts 'No Booker Prize longlist announcement is currently present in the feed.'
+    return
   end
-  checked_source = replace_featured_books(source, checked_books)
-  checked_source = replace_book_tile(checked_source, checked_books.first)
-  JSON.parse(checked_source)
-  puts "Validated #{checked_books.length} books from #{checked_books.first.fetch('recognition')} with covers."
-  exit
+
+  current_identity = current_books.map { |book| book.values_at('title', 'author', 'recognition', 'url') }
+  feed_identity = feed_books.map { |book| book.values_at('title', 'author', 'recognition', 'url') }
+
+  if args.include?('--check')
+    checked_books = feed_books.map do |book|
+      book.merge('cover' => apple_cover_for(book))
+    end
+    checked_source = replace_featured_books(source, checked_books)
+    checked_source = replace_book_tile(checked_source, checked_books.first)
+    JSON.parse(checked_source)
+    puts "Validated #{checked_books.length} books from #{checked_books.first.fetch('recognition')} with covers."
+    return
+  end
+
+  if current_identity == feed_identity
+    puts "Featured books already match #{feed_books.first.fetch('recognition')}."
+    return
+  end
+
+  feed_books.each { |book| book['cover'] = apple_cover_for(book) }
+  source = replace_featured_books(source, feed_books)
+  source = replace_book_tile(source, feed_books.first)
+  source.sub!(/"assetVersion": "[^"]+"/, "\"assetVersion\": \"#{Date.today.strftime('%Y%m%d')}books\"")
+  File.write(DATA_PATH, source)
+
+  puts "Updated featured books to #{feed_books.first.fetch('recognition')}."
 end
 
-if current_identity == feed_identity
-  puts "Featured books already match #{feed_books.first.fetch('recognition')}."
-  exit
-end
-
-feed_books.each { |book| book['cover'] = apple_cover_for(book) }
-source = replace_featured_books(source, feed_books)
-source = replace_book_tile(source, feed_books.first)
-source.sub!(/"assetVersion": "[^"]+"/, "\"assetVersion\": \"#{Date.today.strftime('%Y%m%d')}books\"")
-File.write(DATA_PATH, source)
-
-puts "Updated featured books to #{feed_books.first.fetch('recognition')}."
+main if $PROGRAM_NAME == __FILE__

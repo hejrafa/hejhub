@@ -22,6 +22,9 @@ jobs:
         with:
           ruby-version: '3.3'
 
+      - name: Test refresh fetch retries
+        run: ruby tools/update_featured_books_test.rb
+
       - name: Refresh Booker longlist
         run: ruby tools/update_featured_books.rb
 
