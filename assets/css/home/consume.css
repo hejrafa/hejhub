@@ -37,21 +37,12 @@
   --icon-tilt: 2deg;
 }
 
-.tile-bsky {
-  --tile-bg: var(--blue);
-  --tilt: -1deg;
-  --icon-tilt: 7deg;
-  grid-column: 1 / span 4;
-  grid-row: 3;
-}
-
 .tile-pinterest .tile-title,
 .tile-twitch .tile-title {
   max-width: calc(100% - 90px);
   font-size: var(--tile-title-side);
 }
 
-.tile-bsky .tile-title,
 .tile-reddit .tile-title,
 .tile-music .tile-title,
 .tile-books .tile-title {
@@ -80,7 +71,7 @@
   --tile-bg: var(--green);
   --tilt: 0.7deg;
   --icon-tilt: 4deg;
-  grid-column: 5 / span 4;
+  grid-column: 1 / span 6;
   grid-row: 3;
 }
 
@@ -92,14 +83,14 @@
 .tile-music {
   --tile-bg: var(--yellow);
   --tilt: -0.8deg;
-  grid-column: 9 / span 4;
+  grid-column: 7 / span 5;
   grid-row: 3;
 }
 
 .tile-books {
   --tile-bg: var(--cream);
   --tilt: 0.8deg;
-  grid-column: 13 / span 4;
+  grid-column: 12 / span 5;
   grid-row: 3;
 }
 

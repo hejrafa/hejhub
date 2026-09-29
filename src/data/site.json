@@ -1,6 +1,6 @@
 {
-  "assetVersion": "20260815e",
-  "faviconVersion": "20260815a",
+  "assetVersion": "20260929j",
+  "faviconVersion": "20260929a",
   "site": {
     "name": "hejhub",
     "url": "https://hejhub.com/",
@@ -29,11 +29,12 @@
     "sameAs": [
       "https://hejrafa.com/",
       "https://github.com/hejrafa",
-      "https://bsky.app/profile/hejrafa.com",
       "https://letterboxd.com/hejrafa/",
       "https://pinterest.com/hejrafa",
       "https://www.curseforge.com/members/hejrafa/projects",
-      "https://www.youtube.com/@hejrafa"
+      "https://www.youtube.com/@hejrafa",
+      "https://daumenkino.fm/",
+      "https://joinakari.com/"
     ]
   },
   "pages": {
@@ -43,7 +44,7 @@
       "description": "Rafael Polutta's personal link hub for films, music, reading, social links, creator tools, analytics, projects, and daily shortcuts.",
       "canonical": "https://hejhub.com/",
       "robots": "index, follow, max-image-preview:large",
-      "dateModified": "2026-08-15",
+      "dateModified": "2026-09-29",
       "stylesheetPaths": ["assets/css/core.css", "assets/css/home.css"],
       "scriptPaths": [
         "assets/js/shared.js",
@@ -149,14 +150,6 @@
         "icon": "assets/icons/pinterest.svg"
       },
       {
-        "className": "tile-bsky",
-        "href": "https://bsky.app/profile/hejrafa.com",
-        "ariaLabel": "Bluesky",
-        "kicker": "Bluesky",
-        "titleLines": ["Sky noise"],
-        "icon": "assets/icons/bluesky.svg"
-      },
-      {
         "className": "tile-reddit",
         "href": "https://www.reddit.com",
         "ariaLabel": "Reddit",
@@ -194,42 +187,52 @@
         "className": "tile-create-youtube",
         "href": "https://studio.youtube.com",
         "ariaLabel": "YouTube Studio",
-        "kicker": "YouTube Studio",
+        "kicker": "YouTube",
         "titleLines": ["Subs"],
         "countId": "youtube-sub-count",
         "countFallback": "--",
         "icon": "assets/icons/youtube.svg"
       },
       {
+        "className": "tile-daumenkino",
+        "href": "https://daumenkino.fm/",
+        "ariaLabel": "Daumenkino film podcast",
+        "kicker": "Daumenkino",
+        "titleLines": ["Followers"],
+        "countId": "daumenkino-count",
+        "countFallback": "79",
+        "icon": "assets/images/daumenkino-cover.jpg"
+      },
+      {
+        "className": "tile-akari",
+        "href": "https://admin.joinakari.com/",
+        "ariaLabel": "Akari admin",
+        "kicker": "Akari",
+        "titleLines": ["Admin desk"],
+        "icon": "assets/icons/akari.svg"
+      },
+      {
         "className": "tile-claude",
         "href": "https://claude.ai",
         "ariaLabel": "Claude",
         "kicker": "Claude",
-        "titleLines": ["Prompt", "forge"],
+        "titleLines": ["Prompt forge"],
         "icon": "assets/icons/work/claude.svg"
-      },
-      {
-        "className": "tile-chatgpt",
-        "href": "https://chatgpt.com/",
-        "ariaLabel": "ChatGPT",
-        "kicker": "ChatGPT",
-        "titleLines": ["Idea", "lab"],
-        "icon": "assets/icons/openai.svg"
       },
       {
         "className": "tile-curseforge",
         "href": "https://www.curseforge.com/members/hejrafa/projects",
         "ariaLabel": "CurseForge projects",
         "kicker": "CurseForge",
-        "titleLines": ["Mod", "forge"],
+        "titleLines": ["Mod forge"],
         "icon": "assets/icons/curseforge.svg"
       },
       {
         "className": "tile-app-store-connect",
         "href": "https://appstoreconnect.apple.com/apps",
         "ariaLabel": "App Store Connect apps",
-        "kicker": "App Store Connect",
-        "titleLines": ["Ship", "apps"],
+        "kicker": "App Store",
+        "titleLines": ["Ship apps"],
         "icon": "assets/icons/app-store.svg"
       },
       {
@@ -237,7 +240,7 @@
         "href": "https://github.com/hejrafa",
         "ariaLabel": "GitHub profile",
         "kicker": "GitHub",
-        "titleLines": ["Code", "garden"],
+        "titleLines": ["Code garden"],
         "icon": "assets/icons/github.svg",
         "extraHtml": "<div class=\"github-dots\" id=\"github-dots\" aria-hidden=\"true\"></div>"
       }
@@ -478,7 +481,7 @@
   "sitemap": [
     {
       "loc": "https://hejhub.com/",
-      "lastmod": "2026-08-15",
+      "lastmod": "2026-09-29",
       "changefreq": "monthly",
       "priority": "1.0"
     },

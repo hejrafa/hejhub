@@ -2,16 +2,57 @@
   const data = window.HejHubData || {};
   const home = window.HejHubHome || {};
 
+  const GARDEN_DAYS = 91;
+
+  function isoDate(date) {
+    return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
+      .map(part => String(part).padStart(2, '0'))
+      .join('-');
+  }
+
+  // Levels follow the quartiles of active days, like GitHub's own graph.
+  function gardenLevels(counts) {
+    const active = counts.filter(Boolean).sort((a, b) => a - b);
+    const quartile = q => active[Math.floor((active.length - 1) * q)] || 0;
+    const [q1, q2, q3] = [quartile(0.25), quartile(0.5), quartile(0.75)];
+    return counts.map(count => {
+      if (!count) return 0;
+      if (count <= q1) return 1;
+      if (count <= q2) return 2;
+      if (count <= q3) return 3;
+      return 4;
+    });
+  }
+
+  // Own commit counts across all branches, forks, private repos and AI bots,
+  // refreshed by tools/update_code_garden.rb.
+  async function loadGardenCounts() {
+    const response = await fetch('assets/data/code-garden.json', { cache: 'no-cache' });
+    if (!response.ok) throw new Error('No code garden data');
+    const { days = {} } = await response.json();
+    const today = new Date();
+    const counts = Array.from({ length: GARDEN_DAYS }, (_, index) => {
+      const date = new Date(today.getFullYear(), today.getMonth(), today.getDate() - (GARDEN_DAYS - 1 - index));
+      return Number(days[isoDate(date)]) || 0;
+    });
+    return gardenLevels(counts).map(level => ({ level }));
+  }
+
+  async function loadGitHubGraph() {
+    const response = await HejHub.fetchJsonCached(
+      'https://github-contributions-api.jogruber.de/v4/hejrafa?y=last',
+      {
+        cacheKey: 'github-contributions-hejrafa-last-year',
+        ttl: 30 * 60 * 1000
+      }
+    );
+    return (response?.contributions || []).slice(-GARDEN_DAYS);
+  }
+
+  // Last quarter: 13 week columns of 7 days, oldest first, so today is the bottom-right dot.
   async function loadGitHubDots() {
     try {
-      const response = await HejHub.fetchJsonCached(
-        'https://github-contributions-api.jogruber.de/v4/hejrafa?y=last',
-        {
-          cacheKey: 'github-contributions-hejrafa-last-year',
-          ttl: 30 * 60 * 1000
-        }
-      );
-      const contributions = (response?.contributions || []).slice(-35);
+      const contributions = await loadGardenCounts().catch(loadGitHubGraph);
       if (contributions.length) {
         home.renderGitHubDots(contributions);
       }

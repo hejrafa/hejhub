@@ -15,14 +15,15 @@
     min-height: 270px;
   }
 
-  .tile-bsky,
   .tile-twitch,
   .tile-pinterest,
   .tile-reddit,
   .tile-music,
   .tile-books,
   .tile-claude,
-  .tile-chatgpt,
+  .tile-akari,
+  .tile-create-youtube,
+  .tile-daumenkino,
   .tile-curseforge,
   .tile-app-store-connect {
     grid-column: span 1;
@@ -30,64 +31,62 @@
   }
 
   .tile-reddit {
-    grid-column: span 1;
+    grid-column: span 2;
     min-height: 126px;
   }
 
-  .tile-create-youtube {
-    grid-column: span 2;
-    grid-row: auto;
-    min-height: 260px;
-    order: 1;
+  .tile-create-youtube,
+  .tile-daumenkino {
+    min-height: 168px;
   }
 
-  .tile-claude {
-    order: 2;
-  }
-
-  .tile-curseforge {
-    order: 4;
-  }
-
-  .tile-chatgpt {
-    order: 3;
-  }
-
+  .tile-claude,
+  .tile-akari,
+  .tile-curseforge,
   .tile-app-store-connect {
-    order: 5;
+    min-height: 150px;
   }
 
   .tile-github {
     grid-column: span 2;
     grid-row: auto;
-    min-height: 168px;
-    order: 6;
+    min-height: 370px;
   }
 
   .create-count {
-    font-size: 74px;
+    font-size: 56px;
+  }
+
+  .tile-create-youtube .tile-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tile-daumenkino .tile-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .tile-claude .tile-icon,
+  .tile-akari .tile-icon,
+  .tile-curseforge .tile-icon,
+  .tile-app-store-connect .tile-icon {
+    width: 48px;
+    height: 48px;
   }
 
   .github-dots {
-    right: 14px;
-    top: 36px;
-    width: min(54%, 150px);
-    max-height: 46px;
-    gap: 3px;
-  }
-
-  .tile-github .tile-title {
-    max-width: calc(100% - 64px);
-    transform: translateZ(44px);
-  }
-
-  .tile-github .tile-icon {
-    left: auto;
+    top: 60px;
+    left: 18px;
     right: 18px;
-    bottom: 16px;
-    width: 72px;
-    height: 72px;
+    gap: 6px;
+    transform: translateZ(30px);
   }
+
+  .tile-github:hover .github-dots {
+    transform: translateY(-4px) translateZ(40px);
+  }
+
 
   .poster-stack {
     width: 320px;
