@@ -11,7 +11,9 @@ require 'uri'
 ROOT = File.expand_path('..', __dir__)
 DATA_PATH = File.join(ROOT, 'src/data/site.json')
 BOOKER_FEED_URL = 'https://thebookerprizes.substack.com/feed'
+BOOKER_POSTS_URL = 'https://thebookerprizes.substack.com/api/v1/posts?limit=30'
 RSS2JSON_URL = 'https://api.rss2json.com/v1/api.json'
+JINA_READER_URL = 'https://r.jina.ai/'
 APPLE_BOOKS_SEARCH_URL = 'https://itunes.apple.com/search'
 FETCH_MAX_ATTEMPTS = 4
 FETCH_RETRYABLE_ERRORS = [
@@ -27,7 +29,7 @@ def retryable_http_status?(status)
   [408, 429].include?(status) || (500..599).cover?(status)
 end
 
-def fetch(uri, sleeper: Kernel.method(:sleep))
+def fetch(uri, headers: {}, sleeper: Kernel.method(:sleep))
   attempt = 0
 
   loop do
@@ -37,13 +39,14 @@ def fetch(uri, sleeper: Kernel.method(:sleep))
     begin
       request = Net::HTTP::Get.new(uri)
       request['User-Agent'] = 'hejhub-book-refresh/1.0'
+      headers.each { |name, value| request[name] = value }
 
       response = Net::HTTP.start(
         uri.host,
         uri.port,
         use_ssl: uri.scheme == 'https',
         open_timeout: 10,
-        read_timeout: 30
+        read_timeout: 60
       ) { |http| http.request(request) }
       return response.body if response.is_a?(Net::HTTPSuccess)
 
@@ -65,12 +68,42 @@ def text_from_html(html)
   CGI.unescapeHTML(html.to_s.gsub(/<[^>]+>/, '')).strip
 end
 
-def latest_booker_longlist
-  query = URI.encode_www_form(rss_url: BOOKER_FEED_URL)
-  response = JSON.parse(fetch(URI("#{RSS2JSON_URL}?#{query}")))
-  raise "Booker feed proxy failed: #{response['message']}" unless response['status'] == 'ok'
+def posts_from_substack_api(body)
+  JSON.parse(body).map { |post| { 'title' => post['title'], 'content' => post['body_html'] } }
+end
 
-  candidates = response.fetch('items', []).map do |item|
+# Substack blocks GitHub-hosted runners with 403, so fall back to proxies when
+# the direct API is unreachable. Each source yields [{ 'title', 'content' }].
+BOOKER_POST_SOURCES = {
+  'Substack API' => lambda do
+    posts_from_substack_api(fetch(URI(BOOKER_POSTS_URL)))
+  end,
+  'Jina reader proxy' => lambda do
+    posts_from_substack_api(fetch(URI("#{JINA_READER_URL}#{BOOKER_POSTS_URL}"), headers: { 'X-Return-Format' => 'text' }))
+  end,
+  'rss2json proxy' => lambda do
+    query = URI.encode_www_form(rss_url: BOOKER_FEED_URL)
+    response = JSON.parse(fetch(URI("#{RSS2JSON_URL}?#{query}")))
+    raise "rss2json failed: #{response['message']}" unless response['status'] == 'ok'
+
+    response.fetch('items', [])
+  end
+}.freeze
+
+def booker_posts(sources = BOOKER_POST_SOURCES)
+  failures = []
+  sources.each do |name, source|
+    return source.call
+  rescue StandardError => e
+    failures << "#{name}: #{e.message}"
+    warn "Booker posts unavailable from #{name} (#{e.message}); trying next source"
+  end
+
+  raise "All Booker post sources failed:\n  #{failures.join("\n  ")}"
+end
+
+def latest_booker_longlist
+  candidates = booker_posts.map do |item|
     match = item['title'].to_s.match(/\AAnnouncing the Booker Prize (\d{4}) longlist\z/i)
     next unless match
 

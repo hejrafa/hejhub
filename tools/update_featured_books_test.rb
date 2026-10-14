@@ -80,6 +80,33 @@ class UpdateFeaturedBooksTest < Minitest::Test
     assert_equal 1, calls
   end
 
+  def test_booker_posts_falls_back_to_next_source
+    posts = [{ 'title' => 'Announcing the Booker Prize 2026 longlist', 'content' => '' }]
+    sources = {
+      'blocked' => -> { raise 'Request failed with 403' },
+      'proxy' => -> { posts }
+    }
+
+    result = nil
+    _stdout, stderr = capture_io { result = booker_posts(sources) }
+
+    assert_equal posts, result
+    assert_includes stderr, 'Booker posts unavailable from blocked'
+  end
+
+  def test_booker_posts_raises_when_every_source_fails
+    sources = {
+      'first' => -> { raise 'Request failed with 403' },
+      'second' => -> { raise 'Request failed with 500' }
+    }
+
+    error = nil
+    capture_io { error = assert_raises(RuntimeError) { booker_posts(sources) } }
+
+    assert_includes error.message, 'first: Request failed with 403'
+    assert_includes error.message, 'second: Request failed with 500'
+  end
+
   private
 
   def response(response_class, code, body = '')
