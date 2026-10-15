@@ -63,11 +63,6 @@ def person_schema
       'addressLocality' => person.fetch('address').fetch('locality'),
       'addressCountry' => person.fetch('address').fetch('country')
     },
-    'worksFor' => {
-      '@type' => 'Organization',
-      'name' => person.fetch('worksFor').fetch('name'),
-      'url' => person.fetch('worksFor').fetch('url')
-    },
     'sameAs' => person.fetch('sameAs')
   }
 end
