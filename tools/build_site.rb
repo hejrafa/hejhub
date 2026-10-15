@@ -138,12 +138,12 @@ def render_head(page, prefix:, structured_data: true)
     lines << "  <meta name=\"twitter:image\" content=\"#{html_attr(site.fetch('image'))}\">"
   end
 
-  lines << "  <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png?v=#{favicon_version}\">"
-  lines << "  <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png?v=#{favicon_version}\">"
-  lines << "  <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png?v=#{favicon_version}\">"
-  lines << "  <link rel=\"icon\" href=\"/favicon.ico?v=#{favicon_version}\" sizes=\"any\">"
-  lines << "  <link rel=\"shortcut icon\" href=\"/favicon.ico?v=#{favicon_version}\">"
-  lines << "  <link rel=\"icon\" href=\"/favicon.svg?v=#{favicon_version}\" type=\"image/svg+xml\">"
+  lines << "  <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/assets/icons/favicon/apple-touch-icon.png?v=#{favicon_version}\">"
+  lines << "  <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/icons/favicon/favicon-32x32.png?v=#{favicon_version}\">"
+  lines << "  <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/assets/icons/favicon/favicon-16x16.png?v=#{favicon_version}\">"
+  lines << "  <link rel=\"icon\" href=\"/assets/icons/favicon/favicon.ico?v=#{favicon_version}\" sizes=\"any\">"
+  lines << "  <link rel=\"shortcut icon\" href=\"/assets/icons/favicon/favicon.ico?v=#{favicon_version}\">"
+  lines << "  <link rel=\"icon\" href=\"/assets/icons/favicon/favicon.svg?v=#{favicon_version}\" type=\"image/svg+xml\">"
   lines << '  <link rel="preconnect" href="https://fonts.googleapis.com">'
   lines << '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
   lines << '  <link rel="preconnect" href="https://cdn.jsdelivr.net">'
