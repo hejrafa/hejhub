@@ -38,7 +38,7 @@ After changing that file, rebuild the generated static files:
 ruby tools/build_site.rb
 ```
 
-The build writes `index.html`, `phrase/index.html`, `404.html`, `assets/js/home-data.js`, `assets/css/home.css`, `robots.txt`, and `sitemap.xml`.
+The build writes `index.html`, `404.html`, `assets/js/home-data.js`, `assets/css/home.css`, `robots.txt`, and `sitemap.xml`.
 
 ## Structure
 
@@ -51,7 +51,6 @@ tools/build_site.rb     Ruby static file generator
 assets/css/core.css     Shared typography, shell, controls, tile base, animations
 assets/css/home.css     Generated homepage CSS import manifest
 assets/css/home/        Homepage CSS split by layout, consume, create, responsive
-assets/css/work.css     Phrase work page layout
 assets/css/error.css    404 page layout
 assets/js/shared.js     Shared cached fetch, random pick, and hover helpers
 assets/js/home-data.js  Generated homepage data for the browser
@@ -59,7 +58,6 @@ assets/js/home/         Homepage UI and feed modules
 assets/js/hejhub.js     Homepage initializer
 assets/icons/           Local service/logo assets
 assets/images/          Image assets
-phrase/index.html       Generated Phrase work links page
 ```
 
 ## Design Notes

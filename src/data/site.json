@@ -54,17 +54,6 @@
         "assets/js/hejhub.js"
       ]
     },
-    "phrase": {
-      "output": "phrase/index.html",
-      "title": "Phrase Work Links - hejhub",
-      "description": "Focused Phrase work links for Rafael Polutta: calendar, inbox, design system, tasks, people tools, and product shortcuts.",
-      "canonical": "https://hejhub.com/phrase/",
-      "robots": "index, follow, max-image-preview:large",
-      "dateModified": "2026-08-13",
-      "stylesheetPaths": ["assets/css/core.css", "assets/css/work.css"],
-      "scriptPaths": ["assets/js/shared.js", "assets/js/phrase.js"],
-      "contactEmail": "rafael.polutta@phrase.com"
-    },
     "notFound": {
       "output": "404.html",
       "title": "404 - hejhub",
@@ -246,78 +235,6 @@
       }
     ]
   },
-  "phrase": {
-    "headlineFallback": "Deep work.",
-    "headlines": ["Deep work.", "Ship it.", "Focus mode.", "Small steps."],
-    "tiles": [
-      {
-        "className": "tile-work-calendar",
-        "href": "https://calendar.google.com/calendar/u/0/r/week?pli=1",
-        "ariaLabel": "Google Calendar",
-        "kicker": "Calendar",
-        "titleLines": ["Week", "view"],
-        "icon": "assets/icons/work/googlecalendar.svg"
-      },
-      {
-        "className": "tile-work-mail",
-        "href": "https://mail.google.com/mail/u/0/#inbox",
-        "ariaLabel": "Gmail inbox",
-        "kicker": "Gmail",
-        "titleLines": ["Inbox"],
-        "icon": "assets/icons/work/gmail.svg"
-      },
-      {
-        "className": "tile-work-syntax",
-        "href": "https://design.phrase.com/81cc57001/p/69797f-syntax",
-        "ariaLabel": "Phrase Syntax in Figma",
-        "kicker": "Syntax",
-        "titleLines": ["Design", "system"],
-        "icon": "assets/icons/work/phrase.png",
-        "iconClassName": "work-logo-phrase"
-      },
-      {
-        "className": "tile-work-okta",
-        "href": "https://memsource.okta.com/app/UserHome",
-        "ariaLabel": "Okta apps",
-        "kicker": "Okta",
-        "titleLines": ["App", "home"],
-        "icon": "assets/icons/work/okta.svg"
-      },
-      {
-        "className": "tile-work-personio",
-        "href": "https://phrase.app.personio.com",
-        "ariaLabel": "Personio",
-        "kicker": "Personio",
-        "titleLines": ["People", "things"],
-        "icon": "assets/icons/work/personio.svg"
-      },
-      {
-        "className": "tile-work-jira",
-        "href": "https://phrase.atlassian.net/jira/software/c/projects/DESIGN/boards/144?assignee=5f72e890459d4200694e8195",
-        "ariaLabel": "Jira design board",
-        "kicker": "Jira",
-        "titleLines": ["Design", "board"],
-        "icon": "assets/icons/work/jira.svg"
-      },
-      {
-        "className": "tile-work-claude",
-        "href": "https://claude.ai",
-        "ariaLabel": "Claude",
-        "kicker": "Claude",
-        "titleLines": ["Thinking", "room"],
-        "icon": "assets/icons/work/claude.svg"
-      },
-      {
-        "className": "tile-work-phrase",
-        "href": "https://phrase.com",
-        "ariaLabel": "Phrase",
-        "kicker": "Phrase",
-        "titleLines": ["Home", "base"],
-        "icon": "assets/icons/work/phrase.png",
-        "iconClassName": "work-logo-phrase"
-      }
-    ]
-  },
   "dynamic": {
     "youtubeSubscriberChannelId": "UCzhKeHDJiADSCY8uoZEub3Q",
     "youtubeCreators": [
@@ -484,12 +401,6 @@
       "lastmod": "2026-09-29",
       "changefreq": "monthly",
       "priority": "1.0"
-    },
-    {
-      "loc": "https://hejhub.com/phrase/",
-      "lastmod": "2026-08-13",
-      "changefreq": "monthly",
-      "priority": "0.7"
     }
   ]
 }

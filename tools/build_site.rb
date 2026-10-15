@@ -203,17 +203,6 @@ def render_tile(tile, prefix:)
   lines.join("\n")
 end
 
-def render_work_tile(tile, prefix:)
-  icon_class = ['work-logo', tile['iconClassName']].compact.join(' ')
-  <<~HTML.chomp
-        <a class="tile work-tile #{html_attr(tile.fetch('className'))}" href="#{html_attr(tile.fetch('href'))}" target="_blank" rel="noopener" aria-label="#{html_attr(tile.fetch('ariaLabel'))}">
-          <span class="tile-kicker">#{h(tile.fetch('kicker'))}</span>
-          <img class="#{html_attr(icon_class)}" src="#{html_attr(asset_path(tile.fetch('icon'), prefix))}" alt="">
-          <span class="tile-title">#{title_html(tile.fetch('titleLines'))}</span>
-        </a>
-  HTML
-end
-
 def render_scripts(page, prefix)
   Array(page['scriptPaths']).map do |path|
     "  <script src=\"#{html_attr(versioned_asset(path, prefix))}\"></script>"
@@ -269,46 +258,6 @@ def render_home
         </footer>
       </div>
 
-    #{render_scripts(page, prefix)}
-    </body>
-    </html>
-  HTML
-end
-
-def render_phrase
-  page = DATA.fetch('pages').fetch('phrase')
-  prefix = relative_prefix(page.fetch('output'))
-  tiles = DATA.fetch('phrase').fetch('tiles').map { |tile| render_work_tile(tile, prefix: prefix) }.join("\n\n")
-  contact_email = page.fetch('contactEmail')
-
-  <<~HTML
-    <!DOCTYPE html>
-    <html lang="en">
-    #{render_head(page, prefix: prefix)}
-    <body class="work-page">
-      <div class="page-shell work-shell">
-        <header class="site-header work-header">
-          <section class="hero work-hero">
-            <h1><span id="work-dynamic-line">#{h(DATA.fetch('phrase').fetch('headlineFallback'))}</span></h1>
-          </section>
-
-          <a class="brand" href="../" aria-label="hejhub home">
-            <img src="../assets/icons/hej-logo.svg" alt="">
-          </a>
-        </header>
-
-        <div class="work-mode-spacer" aria-hidden="true"></div>
-
-        <main>
-          <section class="work-bento" aria-label="Phrase work links">
-    #{tiles}
-          </section>
-        </main>
-
-        <footer class="site-footer">
-          <a class="email-link" href="mailto:#{h(contact_email)}">#{h(contact_email)}</a>
-        </footer>
-      </div>
     #{render_scripts(page, prefix)}
     </body>
     </html>
@@ -396,7 +345,6 @@ def render_sitemap
 end
 
 write_file(DATA.fetch('pages').fetch('home').fetch('output'), render_home)
-write_file(DATA.fetch('pages').fetch('phrase').fetch('output'), render_phrase)
 write_file(DATA.fetch('pages').fetch('notFound').fetch('output'), render_not_found)
 write_file('assets/js/home-data.js', render_home_data_js)
 write_file('assets/css/home.css', render_home_css_manifest)

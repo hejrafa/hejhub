@@ -40,6 +40,6 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/site.json assets/js/home-data.js assets/css/home.css index.html 404.html phrase/index.html sitemap.xml
+          git add src/data/site.json assets/js/home-data.js assets/css/home.css index.html 404.html sitemap.xml
           git commit -m "Refresh featured books"
           git push
