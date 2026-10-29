@@ -128,33 +128,26 @@
     return recent.length >= 8 ? recent : albums;
   }
 
+  // Latest films from the Letterboxd RSS, refreshed by tools/update_letterboxd.rb.
   async function loadLetterboxd() {
     const container = document.getElementById('letterboxd-films');
     if (!container) return;
     try {
-      const rss = 'https://letterboxd.com/hejrafa/rss/';
-      const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
-      const response = await HejHub.fetchJsonCached(proxyUrl, {
-        cacheKey: 'letterboxd-rss-hejrafa',
-        ttl: 30 * 60 * 1000
-      });
-      const items = (response?.items || []).slice(0, 4);
+      const response = await fetch('assets/data/letterboxd.json', { cache: 'no-cache' });
+      if (!response.ok) return;
+      const { films = [] } = await response.json();
+      const items = films.slice(0, 4);
       if (!items.length) return;
 
       const posterClasses = ['poster-a', 'poster-b', 'poster-c', 'poster-d'];
       const fragment = document.createDocumentFragment();
-      items.forEach((item, index) => {
-        const desc = item.description || item.content || '';
-        const doc = new DOMParser().parseFromString(desc, 'text/html');
-        const posterImage = doc.querySelector('img');
-        const title = item.title || '';
-
+      items.forEach((film, index) => {
         const poster = document.createElement('span');
         poster.className = `poster ${posterClasses[index] || ''}`;
-        if (posterImage?.src) {
+        if (film.poster) {
           const img = document.createElement('img');
-          img.src = posterImage.src;
-          img.alt = title;
+          img.src = film.poster;
+          img.alt = film.title || '';
           img.loading = 'lazy';
           poster.appendChild(img);
         }

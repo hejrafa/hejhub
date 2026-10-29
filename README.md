@@ -72,7 +72,7 @@ assets/images/          Image assets
 
 Some tiles enhance themselves with public data when available:
 
-- Letterboxd: pulls recent watched posters from `https://letterboxd.com/hejrafa/rss/` through rss2json.
+- Letterboxd: shows recent watched posters from `assets/data/letterboxd.json`, which `tools/update_letterboxd.rb` refreshes hourly from `https://letterboxd.com/hejrafa/rss/` via GitHub Actions.
 - YouTube consume: opens the YouTube homepage while rotating through a curated set of favorite creator channel images.
 - YouTube create: pulls public subscriber count for channel `UCzhKeHDJiADSCY8uoZEub3Q`.
 - Apple Music: rotates recent charting releases from Apple's Top Albums RSS feed, with local fallbacks.
