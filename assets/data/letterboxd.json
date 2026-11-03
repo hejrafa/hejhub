@@ -1,6 +1,13 @@
 {
   "films": [
     {
+      "title": "Wildwood",
+      "year": "2026",
+      "watchedDate": "2026-11-02",
+      "url": "https://letterboxd.com/hejrafa/film/wildwood-2026/",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/7/0/9/4/6/0/709460-wildwood-2026-0-600-0-900-crop.jpg?v=e0b4be5769"
+    },
+    {
       "title": "Inglourious Basterds",
       "year": "2009",
       "watchedDate": "2026-11-01",
@@ -20,13 +27,6 @@
       "watchedDate": "2026-10-28",
       "url": "https://letterboxd.com/hejrafa/film/never-let-me-go-2010/",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/k8/3o/rn/jw/i5sE6EINofvT7Xq0rpZz9jRbRMS-0-600-0-900-crop.jpg?v=39edfb5e19"
-    },
-    {
-      "title": "Klara and the Sun",
-      "year": "2026",
-      "watchedDate": "2026-10-26",
-      "url": "https://letterboxd.com/hejrafa/film/klara-and-the-sun/",
-      "poster": "https://a.ltrbxd.com/resized/film-poster/7/7/2/2/4/2/772242-klara-and-the-sun-0-600-0-900-crop.jpg?v=96606d0ee5"
     }
   ]
 }
