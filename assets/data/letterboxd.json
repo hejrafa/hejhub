@@ -1,6 +1,13 @@
 {
   "films": [
     {
+      "title": "The Only Living Pickpocket in New York",
+      "year": "2026",
+      "watchedDate": "2026-11-16",
+      "url": "https://letterboxd.com/hejrafa/film/the-only-living-pickpocket-in-new-york/",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/0e/eb/nv/t8/pick-0-600-0-900-crop.jpg?v=e4ffe8cc42"
+    },
+    {
       "title": "Wild Horse Nine",
       "year": "2026",
       "watchedDate": "2026-11-09",
@@ -20,13 +27,6 @@
       "watchedDate": "2026-11-01",
       "url": "https://letterboxd.com/hejrafa/film/inglourious-basterds/3/",
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/1/3/5/2/41352-inglourious-basterds-0-600-0-900-crop.jpg?v=0c74c673e0"
-    },
-    {
-      "title": "Battle Royale",
-      "year": "2000",
-      "watchedDate": "2026-10-31",
-      "url": "https://letterboxd.com/hejrafa/film/battle-royale/",
-      "poster": "https://a.ltrbxd.com/resized/film-poster/4/9/8/1/0/49810-battle-royale-0-600-0-900-crop.jpg?v=a625ba98ef"
     }
   ]
 }
