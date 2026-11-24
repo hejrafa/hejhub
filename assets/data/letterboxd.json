@@ -1,6 +1,13 @@
 {
   "films": [
     {
+      "title": "I Play Rocky",
+      "year": "2026",
+      "watchedDate": "2026-11-23",
+      "url": "https://letterboxd.com/hejrafa/film/i-play-rocky/",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/2/2/8/1170228-i-play-rocky-0-600-0-900-crop.jpg?v=d568ec1f72"
+    },
+    {
       "title": "The Wild Robot",
       "year": "2024",
       "watchedDate": "2026-11-21",
@@ -20,13 +27,6 @@
       "watchedDate": "2026-11-19",
       "url": "https://letterboxd.com/hejrafa/film/you-can-see-everything/",
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/6/2/9/4/4/3/1629443-you-can-see-everything-0-600-0-900-crop.jpg?v=84f6724d74"
-    },
-    {
-      "title": "The Only Living Pickpocket in New York",
-      "year": "2026",
-      "watchedDate": "2026-11-16",
-      "url": "https://letterboxd.com/hejrafa/film/the-only-living-pickpocket-in-new-york/",
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/0e/eb/nv/t8/pick-0-600-0-900-crop.jpg?v=e4ffe8cc42"
     }
   ]
 }
